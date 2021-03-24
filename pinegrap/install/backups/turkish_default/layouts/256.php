@@ -1,0 +1,2738 @@
+<div class="cart">
+    
+    <div class="row"><div class="col-sm-12"><?=$messages?></div></div>
+
+<?php
+    // If there are pending or upsell offers, then show them.
+    if ($number_of_special_offers):
+?>
+
+    <h5 class="col-sm-12">
+        Özel Teklif<?php if ($number_of_special_offers > 1): ?>ler<?php endif ?>
+    </h5>
+
+    <?php
+        // If there are pending offers, then start form
+        if ($pending_offers):
+    ?>
+        <form <?=$attributes?>>
+    <?php endif ?>
+            
+
+    <?php foreach($pending_offers as $offer): ?>
+
+        <?php foreach($offer['offer_actions'] as $action): ?>
+            
+            <div class="form-group col-sm-12">
+
+                <label>
+
+                    <?=h($offer['description'])?>
+
+                    <?php
+                        // If this offer has multiple actions that add a product, then also
+                        // show action name, so the customer will understand what action does.
+                        if ($offer['multiple_actions']):
+                    ?>
+                        (<?=h($action['name'])?>)
+                    <?php endif ?>
+
+                    <?php
+                        // Add some spacing between the description
+                        // and the fields that follow.
+                    ?>
+                    &nbsp;
+
+                </label>
+
+            </div>
+
+            <?php
+                // If this action needs the customer to select a recipient,
+                // then show recipient fields.
+                if ($action['recipient']):
+            ?>
+
+                <div class="form-group col-sm-3">
+
+                    <label for="pending_offer_<?=$offer['id']?>_<?=$action['id']?>_ship_to">Alıcı</label>
+
+                    <div class="select-option">
+                        <i class="ti-angle-down"></i>
+                        <select name="pending_offer_<?=$offer['id']?>_<?=$action['id']?>_ship_to" id="pending_offer_<?=$offer['id']?>_<?=$action['id']?>_ship_to" class="form-control"></select>
+                    </div>
+                </div>
+
+                <?php
+                    // If add name is allowed for this action, then show field.
+                    // Some actions require certain recipients, so the add name
+                    // is not allowed in those cases.
+                    if ($action['add_name']):
+                ?>
+                    <div class="form-group col-sm-3">
+                        <label>veya isim ekle</label>
+                        <input type="text" name="pending_offer_<?=$offer['id']?>_<?=$action['id']?>_add_name" id="pending_offer_<?=$offer['id']?>_<?=$action['id']?>_add_name" class="form-control" placeholder="veya isim ekle">
+                    </div>
+                <?php endif ?>
+
+            <?php endif ?>
+
+            <div class="form-group col-sm-3">
+                <button type="submit" name="add_pending_offer_<?=$offer['id']?>_<?=$action['id']?>" class="btn btn-secondary btn-thin" style="margin-top:29px">
+                    Ekle
+                </button>
+            </div>
+
+        <?php endforeach ?>
+
+    <?php endforeach ?>
+
+    <?php foreach($upsell_offers as $offer): ?>
+
+       <div class="form-group col-sm-12">
+
+            <label>
+
+                <?php if ($offer['upsell_message']): ?>
+                    <?=h($offer['upsell_message'])?>
+                <?php else: ?>
+                    <?=h($offer['description'])?>
+                <?php endif ?>
+
+            </label>
+
+        </div>
+
+        <?php if ($offer['upsell_action_url']): ?>
+            <div class="form-group col-sm-12">
+                <a href="<?=h($offer['upsell_action_url'])?>" class="btn btn-secondary btn-thin" style="margin-top:29px">
+                    <?=h($offer['upsell_action_button_label'])?>
+                </a>
+            </div>
+        <?php endif ?>
+
+    <?php endforeach ?>
+
+    <?php
+        // If there are pending offers, then close form
+        if ($pending_offers):
+    ?>
+
+            <?=$pending_system // Required hidden fields (do not remove) ?>
+
+        </form>
+
+    <?php endif ?>
+
+<?php endif ?>
+
+<?php
+    // If quick add is enabled, then show that area.
+    if ($quick_add):
+?>
+
+    <?php if ($quick_add['label']): ?>
+        <h5 class="col-sm-12"><?=h($quick_add['label'])?></h5>
+    <?php endif ?>
+
+    <form <?=$attributes?>>
+
+        <div class="form-group col-sm-12">
+            <label for="quick_add_product_id">Ürün</label>
+            <div class="select-option">
+                <i class="ti-angle-down"></i>
+                <select name="quick_add_product_id" id="quick_add_product_id"></select>
+            </div>
+        </div>
+
+        <?php
+            // The ids on the various container rows below allows the JS to
+            // dynamically show and hide rows based on the product that is selected.
+        ?>
+
+        <?php if ($quick_add['recipient']): ?>
+
+            <div id="quick_add_ship_to_row" class="form-group col-sm-3">
+                <label for="quick_add_ship_to">Alıcı</label>
+                <div class="select-option">
+                    <i class="ti-angle-down"></i>
+                    <select name="quick_add_ship_to" id="quick_add_ship_to"></select>
+                </div>
+            </div>
+
+            <div id="quick_add_add_name_row" class="form-group col-sm-3">
+                <label for="quick_add_add_name">veya isim ekle</label>
+                <input type="text" name="quick_add_add_name" id="quick_add_add_name" class="form-control" placeholder="Örnek: Ali">
+            </div>
+
+        <?php endif ?>
+
+        <?php if ($quick_add['quantity']): ?>
+            <div id="quick_add_quantity_row" class="form-group col-sm-3">
+                <label for="quick_add_quantity">Miktar</label>
+                <input type="number" name="quick_add_quantity" id="quick_add_quantity" class="form-control">
+            </div>
+        <?php endif ?>
+
+        <?php if ($quick_add['amount']): ?>
+
+            <div id="quick_add_amount_row" class="form-group col-sm-3">
+
+                <label for="quick_add_amount">Tutar</label>
+
+                <div class="input-group">
+
+                    <span class="input-group-addon"><?=$currency_symbol?></span>
+
+                    <input type="number" step="any" name="quick_add_amount" id="quick_add_amount" class="form-control">
+
+                    <?php if ($currency_code): ?>
+                        <span class="input-group-addon"><?=h($currency_code)?></span>
+                    <?php endif ?>
+
+                </div>
+
+            </div>
+
+        <?php endif ?>
+
+        <?php if ($quick_add['available_products']): ?>
+            <div class="form-group col-sm-3">
+                <button type="submit" class="btn btn-secondary btn-thin">
+                    Ekle
+                </button>
+            </div>
+        <?php endif ?>
+
+        <?=$quick_add['system'] // Required hidden fields and JS (do not remove) ?>
+
+    </form>
+
+    <?php endif ?>
+
+<?php
+    // If there are no recipients in the order, then show message.
+    if (!$recipients):
+?>
+
+    <h5><strong>Hiçbir ürün eklenmedi.</strong></h5>
+
+<?php
+    // Otherwise there is at least one recipient, so show items.
+    else:
+?>
+    <p class="text-center lead">Lütfen siparişinizi gözden geçirin ve siparişinizi göndermek için ödeme bilgilerini doldurun.</p>
+    
+    <form <?=$attributes?>>
+
+        <?php
+            // If there are recurring items, then show heading to
+            // differentiate "Today's Charges" from the "Recurring Charges".
+            if ($recurring_items):
+        ?>
+            <h4>Bugünün Ücretleri</h4>
+        <?php endif ?>
+
+        <?php
+            // If there are nonrecurring items, then place items in a column.
+            if ($nonrecurring_items):
+        ?>
+
+            <div class="row">
+
+                <div class="col-lg-9">
+
+                    <table class="table mobile_stacked">
+
+                        <?php foreach($recipients as $recipient): ?>
+
+                            <?php
+                                // If this recipient has an item in nonrecurring transaction
+                                // then show this recipient and its items.
+                                if ($recipient['in_nonrecurring']):
+                            ?>
+
+                                <?php
+                                    // If this is a shipping recipient,
+                                    // then show ship to heading.
+                                    if ($recipient['ship_to_heading']):
+                                ?>
+                                    <tr>
+                                        <td colspan="6" style="border:none">
+
+                                            <h4 class="mt24">
+                                                Alıcı
+
+                                                <?php if (ECOMMERCE_RECIPIENT_MODE == 'multi-recipient'): ?>
+                                                    <strong><?=h($recipient['ship_to_name'])?></strong>
+                                                <?php endif ?>
+                                            </h4>
+
+                                        </td>
+                                    </tr>
+                                <?php endif ?>
+
+                                <tr>
+
+                                    <th>Ürün</th>
+
+                                    <th>Açıklama</th>
+
+                                    <th class="text-center">
+                                        <?php if ($recipient['non_donations_in_nonrecurring']): ?>
+                                            Miktar
+                                        <?php endif ?>
+                                    </th>
+
+                                    <th class="text-right">
+                                        <?php if ($recipient['non_donations_in_nonrecurring']): ?>
+                                            Fiyat
+                                        <?php endif ?>
+                                    </th>
+
+                                    <th class="text-right">Tutar</th>
+
+                                    <th></th>
+
+                                </tr>
+
+                                <?php foreach($recipient['items'] as $item): ?>
+
+                                    <?php
+                                        // If this item is in nonrecurring transaction then show it.
+                                        if ($item['in_nonrecurring']):
+                                    ?>
+
+                                        <tr>
+
+                                            <td>
+                                                <span class="visible-xs-inline">Ürün:</span>
+                                                <?=h($item['name'])?>
+                                            </td>
+
+                                            <td>
+
+                                                <?php
+                                                    // Use the page property to determine whether the
+                                                    // full or short description should be shown.
+                                                    if ($product_description_type == 'full_description'):
+                                                ?>
+                                                
+                                                    <?php
+                                                        // If this item has an image, then start row structure
+                                                        // and output column for image.
+                                                        if ($item['image_url']):
+                                                    ?>
+
+                                                        <div class="row">
+
+                                                            <div class="col-md-6">
+
+                                                                <?php
+                                                                    // The containers around the image fixes Firefox
+                                                                    // issue with responsive images in tables.
+                                                                ?>
+                                                                <div class="responsive_table_image_1">
+                                                                    <div class="responsive_table_image_2">
+                                                                        <img src="<?=h($item['image_url'])?>" class="img-responsive img-fluid center-block">
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="col-md-6">
+
+                                                    <?php endif ?>                  
+                                                
+                                                    <span style="font-weight:bold"><?=h($item['short_description'])?></span>
+                                                    <?=$item['full_description']?>
+                                                <?php else: ?>
+                                                    <?=h($item['short_description'])?>
+                                                <?php endif ?>
+
+                                                <?php if ($item['show_out_of_stock_message']): ?>
+                                                    <?=$item['out_of_stock_message']?>
+                                                <?php endif ?>
+
+                                                <?php if ($item['calendar_event']): ?>
+                                                    <p>
+                                                        <?=h($item['calendar_event']['name'])?><br>
+                                                        <?=$item['calendar_event']['date_and_time_range']?>
+                                                    </p>
+                                                <?php endif ?>
+
+                                                <?php
+                                                    // If there was an image shown for this item, then close
+                                                    // column and row structure.
+                                                    if ($item['image_url']
+                                                       and ($product_description_type == 'full_description')
+                                                    ):
+                                                ?>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                <?php endif ?>
+
+                                                <?php
+                                                    // If the recurring schedule is editable
+                                                    // by the customer, then show fields.
+                                                    if ($item['recurring_schedule']):
+                                                ?>
+
+                                                    <div class="fieldset">
+
+                                                        <div class="legend">Ödeme Planı</div>
+
+                                                        <div class="form-group">
+
+                                                            <label for="recurring_payment_period_<?=$item['id']?>">
+                                                                Sıklık*
+                                                            </label>
+
+                                                            <div class="select-option">
+                                                                <i class="ti-angle-down"></i>
+                                                                <select name="recurring_payment_period_<?=$item['id']?>" id="recurring_payment_period_<?=$item['id']?>"></select>
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="form-group">
+
+                                                            <label for="recurring_number_of_payments_<?=$item['id']?>">
+                                                                Ödeme Sayısı<?php if ($number_of_payments_required): ?>*<?php endif ?>
+                                                            </label>
+
+                                                            <input type="number" name="recurring_number_of_payments_<?=$item['id']?>" id="recurring_number_of_payments_<?=$item['id']?>" class="form-control">
+
+                                                            <p class="help-block">
+                                                                <?=$number_of_payments_message?>
+                                                            </p>
+
+                                                        </div>
+
+                                                        <?php
+                                                            // We only allow the start date to be selected
+                                                            // for certain payment gateways.
+                                                            if ($start_date):
+                                                        ?>
+
+                                                            <div class="form-group">
+
+                                                                <label for="recurring_start_date_<?=$item['id']?>">
+                                                                    Başlangıç Tarihi*
+                                                                </label>
+
+                                                                <input type="text" name="recurring_start_date_<?=$item['id']?>" id="recurring_start_date_<?=$item['id']?>" class="form-control">
+
+                                                            </div>
+
+                                                        <?php endif ?>
+
+                                                    </div>
+
+                                                <?php endif ?>
+
+                                                <?php
+                                                    // If this is a gift card, then show fields.
+                                                    if ($item['gift_card']):
+                                                ?>
+
+                                                    <?php
+                                                        // Show gift card fields for every quantity.
+                                                        for ($quantity_number = 1; $quantity_number <= $item['number_of_gift_cards']; $quantity_number++):
+                                                    ?>
+
+                                                        <div class="fieldset">
+
+                                                            <div class="legend">
+
+                                                                Hediye Kartı
+
+                                                                <?php if ($item['number_of_gift_cards'] > 1): ?>
+                                                                    (<?=$quantity_number?>
+                                                                    of
+                                                                    <?=$item['number_of_gift_cards']?>)
+                                                                <?php endif ?>
+
+                                                            </div>
+
+                                                            <div class="form-group">
+
+                                                                <label>
+                                                                    Tutar
+                                                                </label>
+
+                                                                <p class="form-control-static">
+                                                                    <strong><?=$item['price_info']?></strong>
+                                                                </p>
+
+                                                            </div>
+
+                                                            <div class="form-group">
+
+                                                                <label for="order_item_<?=$item['id']?>_quantity_number_<?=$quantity_number?>_gift_card_recipient_email_address">
+                                                                    Alıcı E-postası*
+                                                                </label>
+
+                                                                <input type="email" name="order_item_<?=$item['id']?>_quantity_number_<?=$quantity_number?>_gift_card_recipient_email_address" id="order_item_<?=$item['id']?>_quantity_number_<?=$quantity_number?>_gift_card_recipient_email_address" class="form-control" placeholder="alici@ornek.com">
+
+                                                            </div>
+
+                                                            <div class="form-group">
+
+                                                                <label for="order_item_<?=$item['id']?>_quantity_number_<?=$quantity_number?>_gift_card_from_name">
+                                                                    İsminiz
+                                                                </label>
+
+                                                                <input type="text" name="order_item_<?=$item['id']?>_quantity_number_<?=$quantity_number?>_gift_card_from_name" id="order_item_<?=$item['id']?>_quantity_number_<?=$quantity_number?>_gift_card_from_name" class="form-control" placeholder="E-postada görünecek isminiz.">
+
+                                                                <p class="help-block">
+                                                                    (isimsiz kalmak istiyorsanız boş bırakın)
+                                                                </p>
+
+                                                            </div>
+
+                                                            <div class="form-group">
+
+                                                                <label for="order_item_<?=$item['id']?>_quantity_number_<?=$quantity_number?>_gift_card_message">
+                                                                    Mesaj
+                                                                </label>
+
+                                                                <textarea name="order_item_<?=$item['id']?>_quantity_number_<?=$quantity_number?>_gift_card_message" id="order_item_<?=$item['id']?>_quantity_number_<?=$quantity_number?>_gift_card_message" rows="3" placeholder="E-postada görünecek mesaj."></textarea>
+
+                                                            </div>
+
+                                                            <div class="form-group">
+
+                                                                <label for="order_item_<?=$item['id']?>_quantity_number_<?=$quantity_number?>_gift_card_delivery_date">
+                                                                    Teslimat tarihi
+                                                                </label>
+
+                                                                <input type="text" name="order_item_<?=$item['id']?>_quantity_number_<?=$quantity_number?>_gift_card_delivery_date" id="order_item_<?=$item['id']?>_quantity_number_<?=$quantity_number?>_gift_card_delivery_date" class="form-control" placeholder="E-postada görünecek isminiz.">
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    <?php endfor ?>
+
+                                                <?php endif ?>
+
+                                                <?php
+                                                    // If this item has a product form,
+                                                    // then show form.
+                                                    if ($item['form']):
+                                                ?>
+                                                    <?php
+                                                        // Show product form for every quantity if necessary.
+                                                        for ($quantity_number = 1; $quantity_number <= $item['number_of_forms']; $quantity_number++):
+                                                    ?>
+                                                    
+                                                        <div class="fieldset">
+                                                    
+                                                            <?php if ($item['form_title'] or ($item['number_of_forms'] > 1)): ?>
+                                                    
+                                                                <div class="legend">
+                                                    
+                                                                    <?php if ($item['form_title']): ?>
+                                                                        <?=h($item['form_title'])?>
+                                                                    <?php endif ?>
+                                                    
+                                                                    <?php if ($item['number_of_forms'] > 1): ?>
+                                                                        (<?=$quantity_number?>
+                                                                        /
+                                                                        <?=$item['number_of_forms']?>)
+                                                                    <?php endif ?>
+                                                    
+                                                                </div>
+                                                    
+                                                            <?php endif ?>
+                                                    
+                                                            <?php foreach ($item['fields'] as $field): ?>
+                                                    
+                                                                <?php
+                                                                    // Prepare field name and id.
+                                                                    $name =
+                                                                        'order_item_' . $item['id'] .
+                                                                        '_quantity_number_' . $quantity_number .
+                                                                        '_form_field_' . $field['id'];
+                                                                ?>
+                                                    
+                                                                <?php switch($field['type']):
+                                                                    case 'text box':
+                                                                    case 'email address':
+                                                                    case 'date':
+                                                                    case 'date and time':
+                                                                    case 'time':
+                                                                ?>
+                                                    
+                                                                        <div class="form-group">
+                                                    
+                                                                            <?php if ($field['label']): ?>
+                                                                                <label for="<?=$name?>">
+                                                                                    <?=$field['label']?><?php if ($field['required']): ?>*<?php endif ?>
+                                                                                </label>
+                                                                            <?php endif ?>
+                                                    
+                                                                            <input
+                                                    
+                                                                                type="<?php if ($field['type'] == 'email address'): ?>email<?php else: ?>text<?php endif ?>"
+                                                    
+                                                                                name="<?=$name?>"
+                                                    
+                                                                                id="<?=$name?>"
+                                                    
+                                                                                <?php if ($field['size']): ?>
+                                                                                    size="<?=$field['size']?>"
+                                                                                <?php endif ?>
+                                                    
+                                                                                <?php if ($field['maxlength']): ?>
+                                                                                    maxlength="<?=$field['maxlength']?>"
+                                                                                <?php endif ?>
+                                                    
+                                                                                <?php if ($field['required']): ?>
+                                                                                    required
+                                                                                <?php endif ?>
+                                                    
+                                                                                class="form-control"
+                                                    
+                                                                            >
+                                                    
+                                                                            <?php if ($field['type'] == 'time'): ?>
+                                                                                <p class="help-block">
+                                                                                    (Format: s:dd AM/PM)
+                                                                                </p>
+                                                                            <?php endif ?>
+                                                    
+                                                                        </div>
+                                                            
+                                                                        <?php
+                                                                           // If there is a title for this field and quantity
+                                                                           // number, then show title label and title.  We show the title
+                                                                           // of a submitted form when a customer enters a valid reference
+                                                                           // code in order to help the customer understand which submitted
+                                                                           // form the reference code is related to (e.g. ordering credits
+                                                                           // for a conversation/support ticket).
+                                                                           if ($field['titles'][$quantity_number]['title']):
+                                                                        ?>
+
+                                                                           <div class="form-group">
+
+                                                                               <label>
+                                                                                   <?=$field['titles'][$quantity_number]['title_label']?>
+                                                                               </label>
+
+                                                                               <p class="form-control-static">
+                                                                                   <?=h($field['titles'][$quantity_number]['title'])?>
+                                                                               </p>
+
+                                                                           </div>
+
+                                                                        <?php endif ?>                                           
+                                                    
+                                                                        <?php break ?>
+                                                    
+                                                                    <?php case 'text area': ?>
+                                                    
+                                                                        <div class="form-group">
+                                                    
+                                                                            <?php if ($field['label']): ?>
+                                                                                <label for="<?=$name?>">
+                                                                                    <?=$field['label']?><?php if ($field['required']): ?>*<?php endif ?>
+                                                                                </label>
+                                                                            <?php endif ?>
+                                                    
+                                                                            <textarea
+                                                    
+                                                                                name="<?=$name?>"
+                                                    
+                                                                                id="<?=$name?>"
+                                                    
+                                                                                <?php if ($field['rows']): ?>
+                                                                                    rows="<?=$field['rows']?>"
+                                                                                <?php endif ?>
+                                                    
+                                                                                <?php if ($field['cols']): ?>
+                                                                                    cols="<?=$field['cols']?>"
+                                                                                <?php endif ?>
+                                                                                                                                                                            								      <?php if ($field['maxlength']): ?>
+                                                                                    maxlength="<?=$field['maxlength']?>"
+                                                                                <?php endif ?>
+                                                    
+                                                                                <?php if ($field['required']): ?>
+                                                                                    required
+                                                                                <?php endif ?>
+                                                    
+                                                                            ></textarea>
+                                                    
+                                                                        </div>
+                                                    
+                                                                        <?php break ?>
+                                                    
+                                                                    <?php case 'pick list': ?>
+                                                    
+                                                                        <div class="form-group">
+                                                    
+                                                                            <?php if ($field['label']): ?>
+                                                                                <label for="<?=$name?>">
+                                                                                    <?=$field['label']?><?php if ($field['required']): ?>*<?php endif ?>
+                                                                                </label>
+                                                                            <?php endif ?>
+                                                                            
+                                                                            <div class="select-option">
+                                                                            <i class="ti-angle-down"></i>                                                    
+                                                                            <select
+                                                    
+                                                                                name="<?=$name?><?php if ($field['multiple']): ?>[]<?php endif ?>"
+                                                    
+                                                                                id="<?=$name?>"
+                                                    
+                                                                                <?php if ($field['size']): ?>
+                                                                                    size="<?=$field['size']?>"
+                                                                                <?php endif ?>
+                                                    
+                                                                                <?php if ($field['required']): ?>
+                                                                                    required
+                                                                                <?php endif ?>
+                                                    
+                                                                                <?php if ($field['multiple']): ?>
+                                                                                    multiple
+                                                                                <?php endif ?>
+                                                    
+                                                                            ></select>
+                                                                            </div>
+                                                    
+                                                                        </div>
+                                                    
+                                                                        <?php break ?>
+                                                    
+                                                                    <?php case 'radio button': ?>
+                                                    
+                                                                        <?php if ($field['label']): ?>
+                                                                            <label><?=$field['label']?></label>
+                                                                        <?php endif ?>
+                                                    
+                                                                        <?php foreach ($field['options'] as $option): ?>
+                                                    
+                                                                            <div class="radio">
+                                                    
+                                                                                <label>
+                                                    
+                                                                                    <input
+                                                    
+                                                                                        type="radio"
+                                                    
+                                                                                        name="<?=$name?>"
+                                                    
+                                                                                        value="<?=h($option['value'])?>"
+                                                    
+                                                                                        <?php if ($field['required']): ?>
+                                                                                            required
+                                                                                        <?php endif ?>
+                                                    
+                                                                                    >
+                                                    
+                                                                                    <?=h($option['label'])?>
+                                                    
+                                                                                </label>
+                                                    
+                                                                            </div>
+                                                    
+                                                                        <?php endforeach ?>
+                                                    
+                                                                        <?php break ?>
+                                                    
+                                                                    <?php case 'check box': ?>
+                                                    
+                                                                        <?php if ($field['label']): ?>
+                                                                            <label><?=$field['label']?></label>
+                                                                        <?php endif ?>
+                                                    
+                                                                        <?php foreach ($field['options'] as $option): ?>
+                                                    
+                                                                            <div class="checkbox">
+                                                    
+                                                                                <label>
+                                                    
+                                                                                    <input
+                                                    
+                                                                                        type="checkbox"
+                                                    
+                                                                                        name="<?=$name?><?php if (count($field['options']) > 1): ?>[]<?php endif ?>"
+                                                    
+                                                                                        value="<?=h($option['value'])?>"
+                                                    
+                                                                                        <?php
+                                                                                            // If the field is required and there is
+                                                                                            // only one check box option, then make
+                                                                                            // field required.
+                                                                                            if (
+                                                                                                $field['required']
+                                                                                                and (count($field['options']) == 1)
+                                                                                            ):
+                                                                                        ?>
+                                                                                            required
+                                                                                        <?php endif ?>
+                                                    
+                                                                                    >
+                                                    
+                                                                                    <?=h($option['label'])?>
+                                                    
+                                                                                </label>
+                                                    
+                                                                            </div>
+                                                    
+                                                                        <?php endforeach ?>
+                                                    
+                                                                        <?php break ?>
+                                                    
+                                                                    <?php case 'information': ?>
+                                                    
+                                                                        <?=$field['information']?>
+                                                    
+                                                                        <?php break ?>
+                                                    
+                                                                <?php endswitch ?>
+                                                    
+                                                            <?php endforeach ?>
+                                                    
+                                                        </div>
+                                                    
+                                                    <?php endfor ?>
+                                                <?php endif ?>
+
+                                            </td>
+
+                                            <td class="text-center">
+
+                                                <?php
+                                                    // If the item is not a donation then show quantity.
+                                                    if ($item['selection_type'] != 'donation'):
+                                                ?>
+
+                                                    <?php
+                                                        // If the item was added by an offer,
+                                                        // then just show uneditable quantity amount.
+                                                        if ($item['added_by_offer']):
+                                                    ?>
+
+                                                        <?=number_format($item['quantity'])?>
+
+                                                    <?php
+                                                        // Otherwise the item was not added by an offer
+                                                        // so allow customer to change quantity.
+                                                        else:
+                                                    ?>
+
+                                                        <div class="form-group">
+
+                                                            <label for="quantity[<?=$item['id']?>]" class="visible-xs-inline-block">
+                                                                Miktar
+                                                            </label>
+
+                                                            <input type="number" name="quantity[<?=$item['id']?>]" id="quantity[<?=$item['id']?>]" class="form-control" style="min-width: 5em">
+
+                                                        </div>
+
+                                                    <?php endif ?>
+
+                                                <?php endif ?>
+
+                                            </td>
+
+                                            <td class="text-right">
+
+                                                <?php if ($item['selection_type'] != 'donation'): ?>
+                                                    <span class="visible-xs-inline">Fiyat:</span>
+                                                    <?=$item['price_info']?>
+                                                <?php endif ?>
+
+                                            </td>
+
+                                                <?php if ($item['selection_type'] == 'donation'): ?>
+                                            
+                                            <td class="text-right donation">
+
+                                                    <div class="form-group">
+
+                                                        <label for="donations[<?=$item['id']?>]" class="visible-xs-inline-block">
+                                                            Tutar
+                                                        </label>
+
+                                                        <div class="input-group">
+
+                                                            <span class="input-group-addon">
+                                                                <?=$currency_symbol?>
+                                                            </span>
+
+                                                            <input type="number" step="any" name="donations[<?=$item['id']?>]" id="donations[<?=$item['id']?>]" class="form-control" style="min-width: 6em">
+
+                                                            <?php if ($currency_code): ?>
+                                                                <span class="input-group-addon">
+                                                                    <?=h($currency_code)?>
+                                                                </span>
+                                                            <?php endif ?>
+
+                                                        </div>
+
+                                                    </div>
+                                                
+                                            </td>
+
+                                                <?php else: ?>
+                                            
+                                            <td class="text-right">
+                                                
+                                                    <span class="visible-xs-inline">Tutar:</span>
+                                                    <?=$item['amount_info']?>
+                                                
+                                            </td>
+                                            
+                                                <?php endif ?>
+
+
+                                            <td class="text-center">
+
+                                                <a href="<?=h($item['remove_url'])?>" class="remove-item" title="Kaldır">
+                                                    <i class="ti-close"></i>
+                                                </a>
+
+                                            </td>                    
+
+                                        </tr>
+
+                                    <?php endif ?>
+
+                                <?php endforeach ?>
+                        
+                                <?php
+                                    // If this is a shipping recipient then show shipping fields
+                                    if ($recipient['shipping']):
+                                ?>
+
+                                    <tr>
+                                        <td colspan="6">
+
+                                            <h4 style="margin-top: 15px">
+                                               Teslimat Adresi
+                                                <?php if (ECOMMERCE_RECIPIENT_MODE == 'multi-recipient'): ?>
+                                                    for <strong><?=h($recipient['ship_to_name'])?></strong>
+                                                <?php endif ?>
+                                            </h4>
+
+                                            <div class="form-group">
+                                                <label for="shipping_<?=$recipient['id']?>_salutation">
+                                                    Ünvan
+                                                </label>
+                                                <select
+                                                    id="shipping_<?=$recipient['id']?>_salutation"
+                                                    name="shipping_<?=$recipient['id']?>_salutation"
+                                                    autocomplete="section-shipping-<?=$recipient['id']?> shipping honorific-prefix"
+                                                    class="form-control">
+                                                </select>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="shipping_<?=$recipient['id']?>_first_name">
+                                                    İsim*
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    id="shipping_<?=$recipient['id']?>_first_name"
+                                                    name="shipping_<?=$recipient['id']?>_first_name"
+                                                    autocomplete="section-shipping-<?=$recipient['id']?> shipping given-name"
+                                                    spellcheck="false"
+                                                    class="form-control">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="shipping_<?=$recipient['id']?>_last_name">
+                                                    Soyisim*
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    id="shipping_<?=$recipient['id']?>_last_name"
+                                                    name="shipping_<?=$recipient['id']?>_last_name"
+                                                    autocomplete="section-shipping-<?=$recipient['id']?> shipping family-name"
+                                                    spellcheck="false"
+                                                    class="form-control">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="shipping_<?=$recipient['id']?>_company">
+                                                    Şirket
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    id="shipping_<?=$recipient['id']?>_company"
+                                                    name="shipping_<?=$recipient['id']?>_company"
+                                                    autocomplete="section-shipping-<?=$recipient['id']?> shipping organization"
+                                                    spellcheck="false"
+                                                    class="form-control">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="shipping_<?=$recipient['id']?>_address_1">
+                                                    Adres 1*
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    id="shipping_<?=$recipient['id']?>_address_1"
+                                                    name="shipping_<?=$recipient['id']?>_address_1"
+                                                    autocomplete="section-shipping-<?=$recipient['id']?> shipping address-line1"
+                                                    spellcheck="false"
+                                                    class="form-control">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="shipping_<?=$recipient['id']?>_address_2">
+                                                    Adres 2
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    id="shipping_<?=$recipient['id']?>_address_2"
+                                                    name="shipping_<?=$recipient['id']?>_address_2"
+                                                    autocomplete="section-shipping-<?=$recipient['id']?> shipping address-line2"
+                                                    spellcheck="false"
+                                                    class="form-control">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="shipping_<?=$recipient['id']?>_city">
+                                                    İlçe*
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    id="shipping_<?=$recipient['id']?>_city"
+                                                    name="shipping_<?=$recipient['id']?>_city"
+                                                    autocomplete="section-shipping-<?=$recipient['id']?> shipping address-level2"
+                                                    spellcheck="false"
+                                                    class="form-control">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="shipping_<?=$recipient['id']?>_country">
+                                                    Ülke*
+                                                </label>
+                                                <select
+                                                    id="shipping_<?=$recipient['id']?>_country"
+                                                    name="shipping_<?=$recipient['id']?>_country"
+                                                    autocomplete="section-shipping-<?=$recipient['id']?> shipping country"
+                                                    class="form-control">
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="shipping_<?=$recipient['id']?>_state_text_box">
+                                                    Eyalet / İl
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    id="shipping_<?=$recipient['id']?>_state_text_box"
+                                                    name="shipping_<?=$recipient['id']?>_state"
+                                                    autocomplete="section-shipping-<?=$recipient['id']?> shipping address-level1"
+                                                    spellcheck="false"
+                                                    class="form-control">
+                                                
+                                                <label for="shipping_<?=$recipient['id']?>_state_pick_list" style="display: none">
+                                                    Eyalet / İl*
+                                                </label>
+                                                <select
+                                                    id="shipping_<?=$recipient['id']?>_state_pick_list"
+                                                    name="shipping_<?=$recipient['id']?>_state"
+                                                    autocomplete="section-shipping-<?=$recipient['id']?> shipping address-level1"
+                                                    class="form-control" style="display: none">
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="shipping_<?=$recipient['id']?>_zip_code">
+                                                    Posta Kodu<span id="shipping_<?=$recipient['id']?>_zip_code_required" style="display: none">*</span>
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    id="shipping_<?=$recipient['id']?>_zip_code"
+                                                    name="shipping_<?=$recipient['id']?>_zip_code"
+                                                    autocomplete="section-shipping-<?=$recipient['id']?> shipping postal-code"
+                                                    spellcheck="false"
+                                                    class="form-control">
+                                            </div>
+
+                                            <div>Adres Türü</div>
+
+                                            <div class="radio">
+                                                <label>
+                                                    <input
+                                                        type="radio"
+                                                        name="shipping_<?=$recipient['id']?>_address_type"
+                                                        value="residential">
+                                                    Ev
+                                                </label>
+                                            </div>
+
+                                            <div class="radio">
+                                                <label>
+                                                    <input
+                                                        type="radio"
+                                                        name="shipping_<?=$recipient['id']?>_address_type"
+                                                        value="business">
+                                                    İş
+                                                </label>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="shipping_<?=$recipient['id']?>_phone_number">
+                                                    Telefon
+                                                </label>
+                                                <input
+                                                    type="tel"
+                                                    id="shipping_<?=$recipient['id']?>_phone_number"
+                                                    name="shipping_<?=$recipient['id']?>_phone_number"
+                                                    autocomplete="section-shipping-<?=$recipient['id']?> shipping tel"
+                                                    spellcheck="false"
+                                                    class="form-control">
+                                            </div>
+
+                                            <?php if ($custom_shipping_form): ?>
+                                                
+                                                <!-- Adds edit button and grid around form when user is in edit mode -->
+                                                <?=$edit_custom_shipping_form_start?>
+
+<?=eval('?>' . generate_form_layout_content(array('page_id' => $page_id, 'form_type' => 'shipping', 'indent' => '                                                ')))?>
+                                                <!-- Closes the edit grid -->
+                                                <?=$edit_custom_shipping_form_end?>
+
+                                            <?php endif ?>
+
+                                            <?php if ($arrival_dates): ?>
+
+                                                <h4>
+                                                    Talep Edilen Varış Tarihi
+                                                    <?php if (ECOMMERCE_RECIPIENT_MODE == 'multi-recipient'): ?>
+                                                        for <strong><?=h($recipient['ship_to_name'])?></strong>
+                                                    <?php endif ?>
+                                                </h4>
+
+                                                <?php foreach($arrival_dates as $arrival_date): ?>
+
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input
+                                                                type="radio"
+                                                                id="shipping_<?=$recipient['id']?>_arrival_date_<?=$arrival_date['id']?>"
+                                                                name="shipping_<?=$recipient['id']?>_arrival_date"
+                                                                value="<?=$arrival_date['id']?>">
+                                                            <?=h($arrival_date['name'])?>
+                                                        </label>
+                                                    </div>
+
+                                                    <p><?=$arrival_date['description']?></p>
+
+                                                    <?php if ($arrival_date['custom']): ?>
+                                                        <div class="form-group">
+                                                            <input
+                                                                type="text"
+                                                                id="shipping_<?=$recipient['id']?>_custom_arrival_date_<?=$arrival_date['id']?>"
+                                                                name="shipping_<?=$recipient['id']?>_custom_arrival_date_<?=$arrival_date['id']?>"
+                                                                class="form-control">
+                                                        </div>
+                                                    <?php endif ?>
+
+                                                <?php endforeach ?>
+
+                                            <?php endif ?>
+
+                                            <p
+                                                id="shipping_<?=$recipient['id']?>_message"
+                                                class="alert alert-danger" style="display: none">
+                                            </p>
+                                                                                        
+                                            <h4
+                                                id="shipping_<?=$recipient['id']?>_method_heading"
+                                                style="display: none"
+                                            >
+                                                
+                                                Nakliye Yöntemi
+
+                                                <?php if (ECOMMERCE_RECIPIENT_MODE == 'multi-recipient'): ?>
+                                                    for <strong><?=h($recipient['ship_to_name'])?></strong>
+                                                <?php endif ?>
+                                            </h4>
+
+                                            <table
+                                                id="shipping_<?=$recipient['id']?>_methods"
+                                                class="table mobile_stacked" style="display: none"
+                                            >
+                                                
+                                                <thead>
+                                                    <tr>
+                                                        <th>Birini Seçin</th>
+                                                        <th class="text-right">Maliyet</th>
+                                                        <th>Ayrıntılar</th>
+                                                    </tr>
+                                                </thead>
+                                                
+                                                <tr class="method_row">
+                                                    <td>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input type="radio">
+                                                                <span class="name"></span>
+                                                            </label>
+                                                        </div>
+                                                    </td>
+
+                                                    <td class="text-right">
+                                                        <div class="cost"></div>
+                                                    </td>
+
+                                                    <td>
+                                                        <div class="delivery_date" style="display: none">
+                                                            Tahmini Teslim:
+                                                            <strong class="date"></strong>
+                                                        </div>
+                                                        <div class="description"></div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                <?php endif ?>
+
+                            <?php endif ?>
+
+                        <?php endforeach ?>
+
+                    </table>
+
+                </div>
+
+                <div class="col-lg-3">
+
+            <?php endif ?>
+
+            <h5 class="uppercase text-right">Toplam</h5>
+
+            <table class="table">
+
+                <?php
+                    // We only show the subtotal if there is an offer discount, tax,
+                    // shipping, or gift card discount.  Otherwise the subtotal
+                    // would be redundant with the total due.
+                    if ($show_subtotal):
+                ?>
+                    <tr>
+                        <th scope="row" class="text-right" style="width: 100%">Ara Toplam:</th>
+                        <td class="text-right"><?=$subtotal_info?></td>
+                    </tr>
+                <?php endif ?>
+
+                <?php if ($discount_info): ?>
+                    <tr>
+                        <th scope="row" class="text-right">İndirim:</th>
+                        <td class="text-right">-<?=$discount_info?></td>
+                    </tr>
+                <?php endif ?>
+
+                <?php if ($tax_info): ?>
+                    <tr>
+                        <th scope="row" class="text-right">Vergi:</th>
+                        <td class="text-right"><?=$tax_info?></td>
+                    </tr>
+                <?php endif ?>
+
+                <?php if ($shipping_info): ?>
+                    <tr>
+                        <th scope="row" class="text-right">Nakliye:</th>
+                        <td class="text-right">
+                            <?php
+                                // The shipping class allows the shipping to be dynamically updated
+                                // when a customer selects a method.
+                            ?>
+                            <span class="shipping"><?=$shipping_info?></span>
+                        </td>
+                    </tr>
+                <?php endif ?>
+
+                <?php if ($gift_card_discount_info): ?>
+                    <tr>
+                        <th scope="row" class="text-right">Hediye Kartı<?php if ($number_of_applied_gift_cards > 1): ?><?php endif ?>:</th>
+                        <td class="text-right">-<?=$gift_card_discount_info?></td>
+                    </tr>
+                <?php endif ?>
+
+                <?php if ($show_surcharge): ?>
+
+                    <tr class="surcharge_row">
+                        <th scope="row" class="text-right">Ek Ücret:</th>
+                        <td class="text-right"><?=$surcharge_info?></td>
+                    </tr>
+
+                    <tr class="surcharge_total_row">
+                        <th scope="row" class="text-right">Ödenecek Toplam:</th>
+                        <td class="text-right">
+                            <strong>
+                                <?=$total_with_surcharge_info?><?php if ($base_currency_total_with_surcharge_info): ?>*
+                                (<?=$base_currency_total_with_surcharge_info?>)<?php endif ?>
+                            </strong>
+                        </td>
+                    </tr>
+
+                <?php endif ?>
+
+                <tr class="total_row">
+                    <th scope="row" class="text-right">Ödenecek Toplam:</th>
+                    <td class="text-right">
+                        <?php
+                            // The total and base_currency_total classes allow the total to be
+                            // dynamically updated when a customer selects a shipping method.
+                        ?>
+                        <strong>
+                            <span class="total"><?=$total_info?></span><?php if ($base_currency_total_info): ?>*
+                            (<span class="base_currency_total"><?=$base_currency_total_info?></span>)<?php endif ?>
+                        </strong>
+                    </td>
+                </tr>
+
+            </table>
+
+            <?php
+                // If the customer has a currency selected that is different
+                // from the base currency, then show total disclaimer.
+                if ($total_disclaimer):
+            ?>
+                <p class="text-muted">
+                    <small>
+                        * Bu tutar, şu anki döviz kurumuzu <?=h($base_currency_name)?> üzerinden hesaplar ve kesin masraflardan farklı olabilir (yukarıda <?=h($base_currency_name)?>'de gösterilmiştir).
+                    </small>
+                </p>
+            <?php endif ?>
+                    
+            <div class="row clearfix mt40 mb40">
+
+            <?php if ($show_special_offer_code): ?>
+                
+                <div class="col-sm-6 col-lg-12">
+
+                <div class="form-group">
+
+                    <?php if ($special_offer_code_label): ?>
+                        <h5 class="mb8"><?=h($special_offer_code_label)?></h5>
+                    <?php endif ?>
+
+                    <input type="text" name="special_offer_code" id="special_offer_code" class="form-control">
+                    </div>
+                    
+                    <?php if ($special_offer_code_message): ?>
+                        <p class="help-block">
+                            <?=h($special_offer_code_message)?>
+                        </p>
+                    <?php endif ?>
+
+                </div>
+
+            <?php endif ?>
+
+            <?php if ($applied_offers): ?>
+                
+                <div class="col-sm-6 col-lg-12">
+
+                <h5 class="mb8 red-color">
+                    Uygulanan Teklif<?php if ($number_of_applied_offers > 1): ?>ler<?php endif ?>
+                </h5>
+
+                <?php if ($number_of_applied_offers > 1): ?>
+                    <ul>
+                <?php else: ?>
+                    <p>
+                <?php endif ?>
+
+                <?php foreach($applied_offers as $offer): ?>
+
+                    <?php if ($number_of_applied_offers > 1): ?>
+                        <li>
+                    <?php endif ?>
+
+                    <span class="red-color"><em><?=h($offer['description'])?></em></span>
+
+                    <?php if ($number_of_applied_offers > 1): ?>
+                        </li>
+                    <?php endif ?>
+
+                <?php endforeach ?>
+
+                <?php if ($number_of_applied_offers > 1): ?>
+                    </ul>
+                <?php else: ?>
+                    </p>
+                <?php endif ?>
+                
+                </div>
+
+            <?php endif ?>
+                    
+            </div>
+
+            <div class="form-group">
+
+                <?php
+                    // formnovalidate prevents browser from validating fields
+                    // (e.g. required fields) when update button is clicked.
+                    // This allows customer to partially complete and update cart.
+                    // Browser validation will only occur for checkout button.
+                ?>
+
+                <button type="submit" name="submit_update" class="btn btn-secondary btn-lg" formnovalidate>
+                    <?=h($update_button_label)?>
+                </button>
+
+            </div>
+
+        <?php
+            // If there are nonrecurring items, then close column and row.
+            if ($nonrecurring_items):
+        ?>
+
+                </div>
+
+            </div>
+
+        <?php endif ?>
+
+        <?php if ($recurring_items): ?>
+
+            <h4 class="mt64">Yinelenen Ücretler</h4>
+
+            <div class="row">
+
+                <div class="col-lg-9">
+
+                    <table class="table mobile_stacked">
+
+                        <?php foreach($recipients as $recipient): ?>
+
+                            <?php
+                                // If this recipient has an item for recurring transaction
+                                // then show this recipient and its items.
+                                if ($recipient['in_recurring']):
+                            ?>
+
+                                <?php
+                                    // If multi-recipient shipping is enabled and this is a shipping
+                                    // recipient, then show ship to heading.
+                                    if ($recipient['ship_to_heading']):
+                                ?>
+                                    <tr>
+                                        <td colspan="7" style="border:none">
+
+                                            <h4 class="mt24">
+
+                                                Alıcı
+
+                                                <?php if (ECOMMERCE_RECIPIENT_MODE == 'multi-recipient'): ?>
+                                                    <strong><?=h($recipient['ship_to_name'])?></strong>
+                                                <?php endif ?>
+
+                                            </h4>
+
+                                        </td>
+                                    </tr>
+                                <?php endif ?>
+
+                                <tr>
+
+                                    <th>Ürün</th>
+
+                                    <th>Açıklama</th>
+
+                                    <th>Sıklık</th>
+
+                                    <th class="text-center">
+                                        <?php if ($recipient['non_donations_in_recurring']): ?>
+                                            Miktar
+                                        <?php endif ?>
+                                    </th>
+
+                                    <th class="text-right">
+                                        <?php if ($recipient['non_donations_in_recurring']): ?>
+                                            Fiyat
+                                        <?php endif ?>
+                                    </th>
+
+                                    <th class="text-right">Tutar</th>
+
+                                    <th></th>
+
+                                </tr>
+
+                                <?php foreach($recipient['items'] as $item): ?>
+
+                                    <?php
+                                        // If this item is in recurring transaction then show it.
+                                        if ($item['in_recurring']):
+                                    ?>
+
+                                        <tr>
+
+                                            <td>
+                                                <span class="visible-xs-inline">Ürün:</span>
+                                                <?=h($item['name'])?>
+                                            </td>
+
+                                            <td>
+
+                                                <?php
+                                                    // Use the page property to determine whether the
+                                                    // full or short description should be shown.
+                                                    if ($product_description_type == 'full_description'):
+                                                ?>
+                                                
+                                                    <?php
+                                                        // If this item has an image, then start row structure
+                                                        // and output column for image.
+                                                        if ($item['image_url']):
+                                                    ?>
+
+                                                        <div class="row">
+
+                                                            <div class="col-md-6">
+
+                                                                <?php
+                                                                    // The containers around the image fixes Firefox
+                                                                    // issue with responsive images in tables.
+                                                                ?>
+                                                                <div class="responsive_table_image_1">
+                                                                    <div class="responsive_table_image_2">
+                                                                        <img src="<?=h($item['image_url'])?>" class="img-responsive img-fluid center-block">
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="col-md-6">
+
+                                                    <?php endif ?>                                                 
+                                                                                          
+                                                    <span style="font-weight:bold"><?=h($item['short_description'])?></span>
+                                                    <?=$item['full_description']?>
+                                                <?php else: ?>
+                                                    <?=h($item['short_description'])?>
+                                                <?php endif ?>
+
+                                                <?php if ($item['show_out_of_stock_message']): ?>
+                                                    <?=$item['out_of_stock_message']?>
+                                                <?php endif ?>
+
+                                                <?php if ($item['calendar_event']): ?>
+                                                    <p>
+                                                        <?=h($item['calendar_event']['name'])?><br>
+                                                        <?=$item['calendar_event']['date_and_time_range']?>
+                                                    </p>
+                                                <?php endif ?>
+
+                                                <?php
+                                                    // If there was an image shown for this item, then close
+                                                    // column and row structure.
+                                                    if (($product_description_type == 'full_description') and ($item['image_url'])):
+                                                ?>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                <?php endif ?>
+
+                                                <?php
+                                                    // If the recurring schedule is editable
+                                                    // by the customer, and this item does not
+                                                    // appear in the nonrecurring area,
+                                                    // then show fields.
+                                                    if (
+                                                        $item['recurring_schedule']
+                                                        and !$item['in_nonrecurring']
+                                                    ):
+                                                ?>
+
+                                                    <div class="fieldset">
+
+                                                        <div class="legend">Ödeme Planı</div>
+
+                                                        <div class="form-group">
+
+                                                            <label for="recurring_payment_period_<?=$item['id']?>">
+                                                                Sıklık*
+                                                            </label>
+
+                                                            <div class="select-option">
+                                                                <i class="ti-angle-down"></i>
+                                                                <select name="recurring_payment_period_<?=$item['id']?>" id="recurring_payment_period_<?=$item['id']?>"></select>
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="form-group">
+
+                                                            <label for="recurring_number_of_payments_<?=$item['id']?>">
+                                                                Ödeme Sayısı<?php if ($number_of_payments_required): ?>*<?php endif ?>
+                                                            </label>
+
+                                                            <input type="number" name="recurring_number_of_payments_<?=$item['id']?>" id="recurring_number_of_payments_<?=$item['id']?>" class="form-control">
+
+                                                            <p class="help-block">
+                                                                <?=$number_of_payments_message?>
+                                                            </p>
+
+                                                        </div>
+
+                                                        <?php
+                                                            // We only allow the start date to be selected
+                                                            // for certain payment gateways.
+                                                            if ($start_date):
+                                                        ?>
+
+                                                            <div class="form-group">
+
+                                                                <label for="recurring_start_date_<?=$item['id']?>">
+                                                                    Başlangıç Tarihi*
+                                                                </label>
+
+                                                                <input type="text" name="recurring_start_date_<?=$item['id']?>" id="recurring_start_date_<?=$item['id']?>" class="form-control">
+
+                                                            </div>
+
+                                                        <?php endif ?>
+
+                                                    </div>
+
+                                                <?php endif ?>
+
+                                                <?php
+                                                    // If this item has a product form,
+                                                    // and this item does not appear
+                                                    // in nonrecurring area, then show form.
+                                                    if (
+                                                        $item['form']
+                                                        and !$item['in_nonrecurring']
+                                                    ):
+                                                ?>
+                                                    <?php
+                                                        // Show product form for every quantity if necessary.
+                                                        for ($quantity_number = 1; $quantity_number <= $item['number_of_forms']; $quantity_number++):
+                                                    ?>
+                                                    
+                                                        <div class="fieldset">
+                                                    
+                                                            <?php if ($item['form_title'] or ($item['number_of_forms'] > 1)): ?>
+                                                    
+                                                                <div class="legend">
+                                                    
+                                                                    <?php if ($item['form_title']): ?>
+                                                                        <?=h($item['form_title'])?>
+                                                                    <?php endif ?>
+                                                    
+                                                                    <?php if ($item['number_of_forms'] > 1): ?>
+                                                                        (<?=$quantity_number?>
+                                                                        of
+                                                                        <?=$item['number_of_forms']?>)
+                                                                    <?php endif ?>
+                                                    
+                                                                </div>
+                                                    
+                                                            <?php endif ?>
+                                                    
+                                                            <?php foreach ($item['fields'] as $field): ?>
+                                                    
+                                                                <?php
+                                                                    // Prepare field name and id.
+                                                                    $name =
+                                                                        'order_item_' . $item['id'] .
+                                                                        '_quantity_number_' . $quantity_number .
+                                                                        '_form_field_' . $field['id'];
+                                                                ?>
+                                                    
+                                                                <?php switch($field['type']):
+                                                                    case 'text box':
+                                                                    case 'email address':
+                                                                    case 'date':
+                                                                    case 'date and time':
+                                                                    case 'time':
+                                                                ?>
+                                                    
+                                                                        <div class="form-group">
+                                                    
+                                                                            <?php if ($field['label']): ?>
+                                                                                <label for="<?=$name?>">
+                                                                                    <?=$field['label']?><?php if ($field['required']): ?>*<?php endif ?>
+                                                                                </label>
+                                                                            <?php endif ?>
+                                                    
+                                                                            <input
+                                                    
+                                                                                type="<?php if ($field['type'] == 'email address'): ?>email<?php else: ?>text<?php endif ?>"
+                                                    
+                                                                                name="<?=$name?>"
+                                                    
+                                                                                id="<?=$name?>"
+                                                    
+                                                                                <?php if ($field['size']): ?>
+                                                                                    size="<?=$field['size']?>"
+                                                                                <?php endif ?>
+                                                    
+                                                                                <?php if ($field['maxlength']): ?>
+                                                                                    maxlength="<?=$field['maxlength']?>"
+                                                                                <?php endif ?>
+                                                    
+                                                                                <?php if ($field['required']): ?>
+                                                                                    required
+                                                                                <?php endif ?>
+                                                    
+                                                                                class="form-control"
+                                                    
+                                                                            >
+                                                    
+                                                                            <?php if ($field['type'] == 'time'): ?>
+                                                                                <p class="help-block">
+                                                                                    (Format: s:dd AM/PM)
+                                                                                </p>
+                                                                            <?php endif ?>
+                                                    
+                                                                        </div>
+                                                            
+                                                                        <?php
+                                                                           // If this field has a title and this is the first quantity
+                                                                           // number, then show title label and title.  We show the title
+                                                                           // of a submitted form when a customer enters a valid reference
+                                                                           // code in order to help the customer understand which submitted
+                                                                           // form the reference code is related to (e.g. ordering credits
+                                                                           // for a conversation/support ticket).
+                                                                           if ($field['title'] and ($quantity_number == 1)):
+                                                                        ?>
+
+                                                                           <div class="form-group">
+
+                                                                               <label>
+                                                                                   <?=$field['title_label']?>
+                                                                               </label>
+
+                                                                               <p class="form-control-static">
+                                                                                   <?=h($field['title'])?>
+                                                                               </p>
+
+                                                                           </div>
+
+                                                                        <?php endif ?>
+                                                    
+                                                                        <?php break ?>
+                                                    
+                                                                    <?php case 'text area': ?>
+                                                    
+                                                                        <div class="form-group">
+                                                    
+                                                                            <?php if ($field['label']): ?>
+                                                                                <label for="<?=$name?>">
+                                                                                    <?=$field['label']?><?php if ($field['required']): ?>*<?php endif ?>
+                                                                                </label>
+                                                                            <?php endif ?>
+                                                    
+                                                                            <textarea
+                                                    
+                                                                                name="<?=$name?>"
+                                                    
+                                                                                id="<?=$name?>"
+                                                    
+                                                                                <?php if ($field['rows']): ?>
+                                                                                    rows="<?=$field['rows']?>"
+                                                                                <?php endif ?>
+                                                    
+                                                                                <?php if ($field['cols']): ?>
+                                                                                    cols="<?=$field['cols']?>"
+                                                                                <?php endif ?>
+                                                                                                                                                                     											  <?php if ($field['maxlength']): ?>
+                                                                                    maxlength="<?=$field['maxlength']?>"
+                                                                                <?php endif ?>
+                                                    
+                                                                                <?php if ($field['required']): ?>
+                                                                                    required
+                                                                                <?php endif ?>
+                                                    
+                                                                            ></textarea>
+                                                    
+                                                                        </div>
+                                                    
+                                                                        <?php break ?>
+                                                    
+                                                                    <?php case 'pick list': ?>
+                                                    
+                                                                        <div class="form-group">
+                                                    
+                                                                            <?php if ($field['label']): ?>
+                                                                                <label for="<?=$name?>">
+                                                                                    <?=$field['label']?><?php if ($field['required']): ?>*<?php endif ?>
+                                                                                </label>
+                                                                            <?php endif ?>
+                                                    
+                                                                            <div class="select-option">
+                                                                            <i class="ti-angle-down"></i>
+                                                                            <select
+                                                    
+                                                                                name="<?=$name?><?php if ($field['multiple']): ?>[]<?php endif ?>"
+                                                    
+                                                                                id="<?=$name?>"
+                                                    
+                                                                                <?php if ($field['size']): ?>
+                                                                                    size="<?=$field['size']?>"
+                                                                                <?php endif ?>
+                                                    
+                                                                                <?php if ($field['required']): ?>
+                                                                                    required
+                                                                                <?php endif ?>
+                                                    
+                                                                                <?php if ($field['multiple']): ?>
+                                                                                    multiple
+                                                                                <?php endif ?>
+                                                    
+                                                                                class="form-control"
+                                                    
+                                                                            ></select>
+                                                                            </div>
+                                                    
+                                                                        </div>
+                                                    
+                                                                        <?php break ?>
+                                                    
+                                                                    <?php case 'radio button': ?>
+                                                    
+                                                                        <?php if ($field['label']): ?>
+                                                                            <label><?=$field['label']?></label>
+                                                                        <?php endif ?>
+                                                    
+                                                                        <?php foreach ($field['options'] as $option): ?>
+                                                    
+                                                                            <div class="radio">
+                                                    
+                                                                                <label>
+                                                    
+                                                                                    <input
+                                                    
+                                                                                        type="radio"
+                                                    
+                                                                                        name="<?=$name?>"
+                                                    
+                                                                                        value="<?=h($option['value'])?>"
+                                                    
+                                                                                        <?php if ($field['required']): ?>
+                                                                                            required
+                                                                                        <?php endif ?>
+                                                    
+                                                                                    >
+                                                    
+                                                                                    <?=h($option['label'])?>
+                                                    
+                                                                                </label>
+                                                    
+                                                                            </div>
+                                                    
+                                                                        <?php endforeach ?>
+                                                    
+                                                                        <?php break ?>
+                                                    
+                                                                    <?php case 'check box': ?>
+                                                    
+                                                                        <?php if ($field['label']): ?>
+                                                                            <label><?=$field['label']?></label>
+                                                                        <?php endif ?>
+                                                    
+                                                                        <?php foreach ($field['options'] as $option): ?>
+                                                    
+                                                                            <div class="checkbox">
+                                                    
+                                                                                <label>
+                                                    
+                                                                                    <input
+                                                    
+                                                                                        type="checkbox"
+                                                    
+                                                                                        name="<?=$name?><?php if (count($field['options']) > 1): ?>[]<?php endif ?>"
+                                                    
+                                                                                        value="<?=h($option['value'])?>"
+                                                    
+                                                                                        <?php
+                                                                                            // If the field is required and there is
+                                                                                            // only one check box option, then make
+                                                                                            // field required.
+                                                                                            if (
+                                                                                                $field['required']
+                                                                                                and (count($field['options']) == 1)
+                                                                                            ):
+                                                                                        ?>
+                                                                                            required
+                                                                                        <?php endif ?>
+                                                    
+                                                                                    >
+                                                    
+                                                                                    <?=h($option['label'])?>
+                                                    
+                                                                                </label>
+                                                    
+                                                                            </div>
+                                                    
+                                                                        <?php endforeach ?>
+                                                    
+                                                                        <?php break ?>
+                                                    
+                                                                    <?php case 'information': ?>
+                                                    
+                                                                        <?=$field['information']?>
+                                                    
+                                                                        <?php break ?>
+                                                    
+                                                                <?php endswitch ?>
+                                                    
+                                                            <?php endforeach ?>
+                                                    
+                                                        </div>
+                                                    
+                                                    <?php endfor ?>
+                                                <?php endif ?>
+
+                                            </td>
+
+                                            <td>
+                                                <span class="visible-xs-inline">Sıklık:</span>
+                                                <?=h($item['payment_period'])?>
+                                            </td>
+
+                                            <td class="text-center">
+
+                                                <?php
+                                                    // If the item is not a donation then show quantity.
+                                                    if ($item['selection_type'] != 'donation'):
+                                                ?>
+
+                                                    <?php
+                                                        // If the item was added by an offer,
+                                                        // or was already shown in nonrecurring area,
+                                                        // then just show uneditable quantity amount,
+                                                        // (i.e. don't allow customer to change quantity).
+                                                        if ($item['added_by_offer'] or $item['in_nonrecurring']):
+                                                    ?>
+
+                                                        <?=number_format($item['quantity'])?>
+
+                                                    <?php
+                                                        // Otherwise allow customer to change quantity.
+                                                        else:
+                                                    ?>
+
+                                                        <div class="form-group">
+
+                                                            <label for="quantity[<?=$item['id']?>]" class="visible-xs-inline-block">
+                                                                Miktar
+                                                            </label>
+
+                                                            <input type="number" name="quantity[<?=$item['id']?>]" id="quantity[<?=$item['id']?>]" class="form-control" style="min-width: 5em">
+
+                                                        </div>
+
+                                                    <?php endif ?>
+
+                                                <?php endif ?>
+
+                                            </td>
+
+                                            <td class="text-right">
+
+                                                <?php if ($item['selection_type'] != 'donation'): ?>
+                                                    <span class="visible-xs-inline">Fiyat:</span>
+                                                    <?=$item['price_info']?>
+                                                <?php endif ?>
+
+                                            </td>
+
+                                                <?php
+                                                    // If the item is a donation and it is not
+                                                    // already listed in nonrecurring area,
+                                                    // then allow customer to edit amount.
+                                                    if (
+                                                        ($item['selection_type'] == 'donation')
+                                                        and !$item['in_nonrecurring']
+                                                    ):
+                                                ?>
+ 
+                                            <td class="text-right donation">
+
+                                                    <div class="form-group">
+
+                                                        <label for="donations[<?=$item['id']?>]" class="visible-xs-inline-block">
+                                                            Tutar
+                                                        </label>
+
+                                                        <div class="input-group">
+
+                                                            <span class="input-group-addon">
+                                                                <?=$currency_symbol?>
+                                                            </span>
+
+                                                            <input type="number" step="any" name="donations[<?=$item['id']?>]" id="donations[<?=$item['id']?>]" class="form-control" style="min-width: 6em">
+
+                                                            <?php if ($currency_code): ?>
+                                                                <span class="input-group-addon">
+                                                                    <?=h($currency_code)?>
+                                                                </span>
+                                                            <?php endif ?>
+
+                                                        </div>
+
+                                                    </div>
+                                                
+                                            </td>
+
+                                                <?php else: ?>
+                                            
+                                            <td class="text-right">
+                                                
+                                                    <span class="visible-xs-inline">Tutar:</span>
+                                                    <?=$item['amount_info']?>  
+                                                
+                                            </td>
+                                            
+                                                <?php endif ?>
+
+
+                                            <td class="text-center">
+
+                                                <?php
+                                                    // If the item is not already listed in
+                                                    // nonrecurring area, then show remove button.
+                                                    // We don't want multiple remove buttons
+                                                    // for the same item that could confuse customer.
+                                                    if (!$item['in_nonrecurring']):
+                                                ?>
+
+                                                	<a href="<?=h($item['remove_url'])?>" class="remove-item" title="Kaldır">
+                                                    	<i class="ti-close"></i>
+                                                	</a>
+
+                                                <?php endif ?>
+
+                                            </td>                    
+
+                                        </tr>
+
+                                    <?php endif ?>
+
+                                <?php endforeach ?>
+
+                            <?php endif ?>
+
+                        <?php endforeach ?>
+
+                    </table>
+
+                </div>
+
+                <div class="col-lg-3">
+
+                    <h5 class="uppercase text-right">Yinelenen Toplamlar</h5>
+
+                    <table class="table">
+
+                        <?php
+                            // Loop through the payment periods in order to show totals.
+                            foreach($payment_periods as $payment_period):
+                        ?>
+
+                            <tr>
+                                <th scope="row" class="text-right" style="width: 100%">
+                                    <?=h($payment_period['name'])?> Ara Toplam:
+                                </th>
+                                <td class="text-right">
+                                    <?=$payment_period['subtotal_info']?>
+                                </td>
+                            </tr>
+
+                            <?php if ($payment_period['tax_info']): ?>
+                                <tr>
+                                    <th scope="row" class="text-right" style="width: 100%">
+                                        <?=h($payment_period['name'])?> Vergi:
+                                    </th>
+                                    <td class="text-right">
+                                        <?=$payment_period['tax_info']?>
+                                    </td>
+                                </tr>
+                            <?php endif ?>
+
+                            <tr>
+                                <th scope="row" class="text-right" style="width: 100%">
+                                    <?=h($payment_period['name'])?> Toplam:
+                                </th>
+                                <td class="text-right">
+                                    <strong><?=$payment_period['total_info']?></strong>
+                                </td>
+                            </tr>
+
+                        <?php endforeach ?>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        <?php endif ?>
+    
+    <!--
+        Setup a container for the cross-sell section. We reference the id further below in
+        the JS to load the cross-sell. This cross-sell section is hidden by default in the theme
+        CSS. The JS further below will automatically show the cross-sell section if there are items.
+    -->
+    <div id="cross-sell" class="cross-sell">
+
+        <h4>Bu ürünü satın alan müşteriler aynı zamanda aşağıdaki ürünleri de satın aldı.</h4>
+
+        <!--
+            Cross-sell uses the "items" class below to find the container for all items.
+            This container can be a div instead of a ul.
+        -->
+        <ul class="items row item-grid">
+
+            <!--
+                Setup an HTML template for a single item. Cross-sell uses the "item" class below
+                to find the template.  This can be setup as a div instead of an li. The "link",
+                "image", "description", and "price" classes below are required in order for the
+                cross-sell to dynamically update them.
+            -->
+            <li class="item col-xs-6 col-sm-3">
+                <a class="link">
+                    <div><img class="image"></div>
+                    <div class="description"></div>
+                </a>
+                <div class="price"></div>
+            </li>
+        </ul>
+    </div>
+
+    <!--
+        Load the cross-sell via JS. This code will load the cross-sell JS module, make an API
+        request for the cross-sell items, and then update the cross-sell section accordingly.
+    -->
+    <script>
+        software.load({
+            module: 'cross_sell',
+            complete: function() {
+                software.cross_sell.init({
+
+                    // This should match the cross-sell container id in the HTML above.
+                    id: 'cross-sell',
+
+                    // Set the catalog detail page that the items should be linked to.
+                    // We use the id for "shop-product-fullwidth".
+                    catalog_detail_page: {id: 1002},
+
+                    // Enter the max number of cross-sell items you want to appear.
+                    number_of_items: 4
+                });
+            }
+        });
+    </script>
+
+    <div class="mt40 mb40">
+        
+    <h4>Fatura</h4><hr>
+        
+    <?php if ($billing_same_as_shipping): ?>
+        <div class="checkbox">
+            <label>
+                <input
+                    type="checkbox"
+                    id="billing_same_as_shipping">
+                Fatura Adresi Teslimat Adresi ile Aynı
+            </label>
+        </div>
+    <?php endif ?>
+    
+    <?php if ($custom_field_1 OR $custom_field_2): ?>
+    <div class="row mb24">
+        
+        <?php if ($custom_field_1): ?>
+        <div class="col-sm-12"> 
+        <div class="form-group">
+            <label for="custom_field_1"><?=h($custom_field_1_label)?><?php if ($custom_field_1_required): ?>*<?php endif ?></label>
+            <input type="text" name="custom_field_1" id="custom_field_1" class="form-control">
+        </div>
+        </div>
+        <?php endif ?>
+
+        <?php if ($custom_field_2): ?>
+        <div class="col-sm-12"> 
+        <div class="form-group">
+            <label for="custom_field_2"><?=h($custom_field_2_label)?><?php if ($custom_field_2_required): ?>*<?php endif ?></label>
+            <input type="text" name="custom_field_2" id="custom_field_2" class="form-control">
+        </div>
+        </div>
+        <?php endif ?>
+        
+    </div>
+    <?php endif ?>    
+    
+    <div class="row">
+    <div class="col-sm-4"> 
+    <div class="form-group">
+        <label for="billing_salutation">Ünvan</label>
+        <div class="select-option">
+            <i class="ti-angle-down"></i>
+            <select name="billing_salutation" id="billing_salutation" autocomplete="section-billing billing honorific-prefix"></select>
+        </div>
+    </div>
+    </div>
+
+    <div class="col-sm-4">
+    <div class="form-group">
+        <label for="billing_first_name">İsim*</label>
+        <input type="text" name="billing_first_name" id="billing_first_name" autocomplete="section-billing billing given-name" class="form-control" spellcheck="false">
+    </div>
+    </div>
+    
+    <div class="col-sm-4">
+    <div class="form-group">
+        <label for="billing_last_name">Soyisim*</label>
+        <input type="text" name="billing_last_name" id="billing_last_name" class="form-control" autocomplete="section-billing billing family-name" spellcheck="false">
+    </div>
+    </div>
+        
+    <div class="col-sm-5">
+    <div class="form-group">
+        <label for="billing_email_address">E-Posta*</label>
+        <input type="email" name="billing_email_address" id="billing_email_address" class="form-control" autocomplete="section-billing billing email" spellcheck="false">
+    </div>
+    </div>
+        
+    </div>
+        
+    <?php if ($opt_in): ?>
+    <div class="row">
+    <div class="col-sm-3 col-sm-offset-8"> 
+        <div class="checkbox" style="margin-top: -12px">
+            <label class="check-box">
+                <input type="checkbox" name="opt_in" value="1">
+                <span class="unchecked"><span class="glyphicon glyphicon-ok"></span></span>
+                <span><?=h($opt_in_label)?></span>
+            </label>
+        </div>
+    </div>
+    </div>
+    <?php endif ?>
+        
+    <div class="row mt24">
+
+    <div class="col-sm-4">
+    <div class="form-group">
+        <label for="billing_company">Şirket</label>
+        <input type="text" name="billing_company" id="billing_company" class="form-control" autocomplete="section-billing billing organization" spellcheck="false">
+    </div>
+    </div>
+     
+    <div class="col-sm-4">
+    <div class="form-group">
+        <label for="billing_address_1">Adres 1*</label>
+        <input type="text" name="billing_address_1" id="billing_address_1" class="form-control" autocomplete="section-billing billing address-line1" spellcheck="false">
+    </div>
+    </div>
+        
+    <div class="col-sm-4">
+    <div class="form-group">
+        <label for="billing_address_2">Adres 2</label>
+        <input type="text" name="billing_address_2" id="billing_address_2" class="form-control" autocomplete="section-billing billing address-line2" spellcheck="false">
+    </div>
+    </div>
+        
+    </div>
+        
+    <div class="row">
+
+    <div class="col-sm-4">        
+    <div class="form-group">
+        <label for="billing_city">İlçe*</label>
+        <input type="text" name="billing_city" id="billing_city" class="form-control" autocomplete="section-billing billing address-level2" spellcheck="false">
+    </div>
+    </div>
+
+    <div class="col-sm-4">        
+    <div class="form-group">
+        <label for="billing_state_text_box">Eyalet / İl</label>
+        <input type="text" name="billing_state" id="billing_state_text_box" class="form-control" autocomplete="section-billing billing address-level1" spellcheck="false">
+        
+        <label for="billing_state_pick_list" style="display: none">Eyalet / İl*</label>
+            <div class="select-option">
+                <i class="ti-angle-down"></i>
+                <select name="billing_state" id="billing_state_pick_list" style="display: none" autocomplete="section-billing billing address-level1"></select>
+            </div>
+    </div>
+    </div>
+
+    <div class="col-sm-4">        
+    <div class="form-group">
+        <label for="billing_zip_code">Posta Kodu*</label>
+        <input type="text" name="billing_zip_code" id="billing_zip_code" class="form-control" autocomplete="section-billing billing postal-code" spellcheck="false">
+    </div>
+    </div>
+        
+    </div>
+
+    <div class="row">
+
+    <div class="col-sm-4">
+    <div class="form-group">
+        <label for="billing_country">Ülke*</label>
+        <div class="select-option">
+            <i class="ti-angle-down"></i>
+            <select name="billing_country" id="billing_country" autocomplete="section-billing billing country"></select>
+        </div>
+    </div>
+    </div>
+        
+    <div class="col-sm-4">
+    <div class="form-group">
+        <label for="billing_phone_number">Telefon*</label>
+        <input type="tel" name="billing_phone_number" id="billing_phone_number" class="form-control" autocomplete="section-billing billing tel" spellcheck="false">
+    </div>
+    </div>
+        
+    </div>
+
+    <?php if ($update_contact): ?>
+        <div class="row">
+        <div class="col-sm-12">
+        <div class="checkbox" style="margin-top: -12px">
+            <label class="check-box">
+                <input type="checkbox" name="update_contact" value="1">
+                <span class="unchecked"><span class="glyphicon glyphicon-ok"></span></span>
+                <span>Hesabımı bu fatura bilgileriyle güncelle</span>
+            </label>
+        </div>
+        </div>
+        </div>
+    <?php endif ?>
+
+    <div class="row mt24 mb24">
+
+    <?php if ($po_number): ?>
+        <div class="col-sm-4">
+        <div class="form-group">
+            <label for="po_number">PO Numarası</label>
+            <input type="text" name="po_number" id="po_number" class="form-control" spellcheck="false">
+        </div>
+        </div>
+    <?php endif ?>
+        
+    <?php if ($referral_source): ?>
+        <div class="col-sm-4">
+        <div class="form-group">
+            <label for="referral_source">Bizden nasıl haberiniz oldu?</label>
+            <div class="select-option">
+                <i class="ti-angle-down"></i>
+                <select name="referral_source" id="referral_source"></select>
+                </div>
+        </div>
+        </div>
+    <?php endif ?>        
+
+    <?php if ($tax_exempt): ?>
+        <div class="col-sm-12">
+        <div class="checkbox">
+            <label class="check-box">
+                <input type="checkbox" name="tax_exempt" value="1">
+                <span class="unchecked"><span class="glyphicon glyphicon-ok"></span></span>
+                <span><?=h($tax_exempt_label)?></span>
+            </label>
+        </div>
+        </div>
+    <?php endif ?>
+        
+    </div>
+
+        <?php if ($custom_billing_form): ?>
+            
+            <?=
+                // Add edit button and grid if edit mode is enabled.
+                $edit_custom_billing_form_start
+            ?>
+            
+            <?php if ($custom_billing_form_title): ?>
+                <h2><?=h($custom_billing_form_title)?></h2>
+            <?php endif ?>
+            
+<?=eval('?>' . generate_form_layout_content(array('page_id' => $page_id, 'form_type' => 'billing', 'indent' => '            ')))?>
+            <?=
+                // Close the edit grid.
+                $edit_custom_billing_form_end
+            ?>
+            
+        <?php endif ?>
+
+        <?php if ($applied_gift_cards): ?>
+
+            <h5>
+                Uygulamalı Hediye Kartı<?php if ($number_of_applied_gift_cards > 1): ?><?php endif ?>
+            </h5>
+
+            <?php if ($number_of_applied_gift_cards > 1): ?>
+                <ul>
+            <?php else: ?>
+                <p>
+            <?php endif ?>
+
+            <?php foreach($applied_gift_cards as $gift_card): ?>
+
+                <?php if ($number_of_applied_gift_cards > 1): ?>
+                    <li>
+                <?php endif ?>
+
+                <?=h($gift_card['protected_code'])?>
+
+                (Kalan Bakiye: <?=$gift_card['remaining_balance_info']?>)
+
+                <a href="<?=h($gift_card['remove_url'])?>" class="remove-item" title="Remove">
+                    <i class="ti-close"></i>
+                </a>
+
+                <?php if ($number_of_applied_gift_cards > 1): ?>
+                    </li>
+                <?php endif ?>
+
+            <?php endforeach ?>
+
+            <?php if ($number_of_applied_gift_cards > 1): ?>
+                </ul>
+            <?php else: ?>
+                </p>
+            <?php endif ?>
+
+        <?php endif ?>
+    
+        </div>
+
+        <?php if ($payment): ?>
+
+            <div class="mb40">
+
+            <h4>Ödeme</h4><hr>
+
+            <?php if ($gift_card_code): ?>
+
+                <h5 class="mb8">Hediye Kartı Kodu</h5>
+                <div class="form-group form-inline mb0">
+                    <input type="text" name="gift_card_code" id="gift_card_code" class="form-control" style="min-width:200px">
+                    <button type="submit" name="submit_apply_gift_card" class="btn btn-thin"  formnovalidate>
+                        Uygula
+                    </button>
+                </div>
+
+            <?php endif ?>
+
+            <?php if ($credit_debit_card): ?>
+                
+                <?php
+                    // If this is the only payment method, then show a heading.
+                    if ($number_of_payment_methods == 1):
+                ?>
+                    <h5>Kredi / Banka Kartı</h5>
+
+                <?php
+                    // Otherwise there are multiple payment methods, so show radio button.
+                    else:
+                ?>
+                    <div class="radio">
+                        <div class="radio-option">
+                            <div class="inner"></div>
+                            <input type="radio" name="payment_method" value="Credit/Debit Card">
+                            <span><h5>Kredi / Banka Kartı</h5></span>
+                        </div>
+                    </div>
+                <?php endif ?>
+
+                <?php
+                    // This container and class allows the credit/debit card
+                    // fields to be dynamically shown/hidden as necesssary.
+                ?>
+                <div class="credit_debit_card" style="display: none">
+
+                    <div class="row">
+                        
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="card_number">Kart Numarası*</label>
+                                <input
+                                    type="tel"
+                                    id="card_number"
+                                    name="card_number" 
+                                    autocomplete="cc-number"
+                                    spellcheck="false"
+                                    inputmode="numeric"
+                                    class="form-control">
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-3 col-xs-6">
+                            <div class="form-group">
+                                <label for="expiration">Son Kullanma Tarihi*</label>
+                                <input
+                                    type="tel"
+                                    id="expiration"
+                                    name="expiration" 
+                                    autocomplete="cc-exp"
+                                    spellcheck="false"
+                                    inputmode="numeric"
+                                    placeholder="AA / YY"
+                                    class="form-control">
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-3 col-xs-6">
+                            <div class="form-group">
+                                <label for="card_verification_number">Güvenlik Kodu (CVC)*</label>
+
+                                <input
+                                    type="tel"
+                                    id="card_verification_number"
+                                    name="card_verification_number" 
+                                    autocomplete="cc-csc"
+                                    spellcheck="false"
+                                    inputmode="numeric"
+                                    placeholder="CVC"
+                                    maxlength="4"
+                                    class="form-control">
+
+                                <?php if ($card_verification_number_url): ?>
+                                    <p class="help-block">
+                                        <a href="<?=h($card_verification_number_url)?>" target="_blank">Bu nedir?</a>
+                                    </p>
+                                <?php endif ?>
+                            </div>
+                        </div>
+                    
+                        <?php if($installment ): ?>
+                        	<div class="col-xs-12">
+                        	    <style>.installment-row .installment_box{
+                        	        display: inline-block;
+                        	        margin: 1rem;
+                        	        padding: 1rem;
+                        	        background-color: whitesmoke;
+                        	        border-radius: 3px;
+                        	        
+                        	        transition:background-color .3s ease;
+                        	        border: 1px solid #e5e5e5;}
+                        	        .installment-row .installment_box:hover{
+                        	           	border: 1px solid #58b675;
+                        	            background-color: #d6ffbc;
+                        	            transition: background-color .3s ease;
+                        	        }
+                        	        .installment-row .installment_box:active{
+                        	            background-color: #c0fb9b;
+                        	            transition: background-color .3s ease;
+                        	        }
+                        	   .installment_box input[name="installment"] {height: 2rem;width: 100%;}
+                        	        
+                            	</style>
+                            	<div class="installment-row" style="display:none">
+                         			<div>
+                						<label>Taksitli Ödeme Seçenekleri</label>
+            						</div>
+                            	    <span id="oneinstallment" class="installment_box">
+                        				<input type="radio" name="installment" checked value="1" >
+                        				<label for="1">Tek Çekim<br/><br/><?if($total_with_surcharge_info):?><?=($total_with_surcharge_info)?><?else:?><?=($total_info)?><?endif?></label>
+                            	    </span>
+                            	    <span id="twoinstallment" class="installment_box" style="display:none">
+                        				<input type="radio" name="installment" value="2">
+                            	        <label for="2">2 Taksit <br/><span class="installment_prices_here"></span></label>
+                            	    </span>
+                            	    <span id="threeinstallment" class="installment_box" style="display:none">
+                        				<input type="radio" name="installment" value="3">
+                        				<label for="3">3 Taksit <br/><span class="installment_prices_here"></span></label>
+                                	</span>
+                                	<span id="sixinstallment" class="installment_box" style="display:none">
+                        				<input type="radio" name="installment" value="6">
+                        				<label for="6">6 Taksit <br/><span class="installment_prices_here"></span></label>
+                                	</span>
+                                	<span id="nineinstallment" class="installment_box" style="display:none">
+                        				<input type="radio" name="installment" value="9">
+                        				<label for="9">9 Taksit <br/><span class="installment_prices_here"></span></label>
+                                	</span>
+                                	<span id="twelveinstallment" class="installment_box" style="display:none">
+                        				<input type="radio" name="installment" value="12">
+                        				<label for="12">12 Taksit <br/><span class="installment_prices_here"></span></label>
+                                	</span>
+                            	</div>
+                    			<?php if($installment_table):?>
+                        			<div class="modal-container">
+    									<a class="btn-modal " href="#" style="text-decoration:underline;">Taksit seçeneklerini görüntülemek için tıklayın.</a>
+    									<div class="site_modal">
+        									<?=($installment_table)?>
+                                		</div>
+									</div> 
+                    			<?php endif ?>
+                      		</div> 	
+                  		<? endif ?>
+                    </div>
+
+                    <?php
+                        // We only show the surcharge message if there are other
+                        // payment method options (e.g. PayPal Express Checkout, Offline)
+                        // because the total might not include the surcharge until
+                        // the customer selects the credit/debit card payment method.
+                        if ($surcharge_message):
+                    ?>
+                        <p class="text-muted">
+                            <small>
+                                %<?=h($surcharge_percentage)?> ek ücret eklenecek.
+                            </small>
+                        </p>
+                    <?php endif ?>
+
+                    <? if($threedsecure): ?>
+                    	<input type="checkbox" id="threedsecure" name="threedsecure" value="1" <?=($threedsecure_required)?>>
+                    	<label class="check-box">3DSecure ile Ödeme</label>
+                	<? endif ?>
+                </div>
+
+            <?php endif ?>
+
+            <?php if ($paypal_express_checkout): ?>
+                
+                <?php
+                    // If this is the only payment method, then just show the PayPal image.
+                    if ($number_of_payment_methods == 1):
+                ?>
+                    <h5><img src="<?=h($paypal_express_checkout_image_url)?>" alt="PayPal"></h5>
+                    
+                <?php
+                    // Otherwise there are multiple payment methods, so show radio button.
+                    else:
+                ?>
+                    <div class="radio">
+                        <div class="radio-option">
+                            <div class="inner"></div>
+                            <input type="radio" name="payment_method" value="PayPal Express Checkout">
+                            <span><img src="<?=h($paypal_express_checkout_image_url)?>" alt="PayPal" style="position: relative; top:-4px"></span>
+                        </div>
+                    </div>
+                <?php endif ?>
+            <?php endif ?>
+
+            <?php if ($offline_payment): ?>
+                
+                <?php
+                    // If this is the only payment method, then show a heading.
+                    if ($number_of_payment_methods == 1):
+                ?>
+                    <h5 class="mb8"><?=h($offline_payment_label)?></h5>
+
+                <?php
+                    // Otherwise there are multiple payment methods, so show radio button.
+                    else:
+                ?>
+                    <div class="radio">
+                        <div class="radio-option">
+                            <div class="inner"></div>
+                            <input type="radio" name="payment_method" value="Offline Payment">
+                            <span><h5 class="mb8"><?=h($offline_payment_label)?></h5></span>
+                        </div>
+                    </div>
+                <?php endif ?>
+            <?php endif ?>
+
+        <?php endif ?>
+                
+            <?php if ($offline_payment_allowed): ?>
+                <div class="software_notice">
+                <div class="checkbox">
+                    <label class="check-box">
+                        <input type="checkbox" name="offline_payment_allowed" value="1">
+                        <span class="unchecked"><span class="glyphicon glyphicon-ok"></span></span>
+                        Bu <?=h($shopping_cart_label)?> için çevrimdışı ödeme seçeneğine izin ver (ve uygulanacak güncellemeyi tıklayın).
+                    </label>
+                </div>
+                </div>
+            <?php endif ?>                         
+                
+
+        <?php if ($terms_url): ?>
+            <div class="checkbox">
+                  <label class="check-box">
+                    <input type="checkbox" name="terms" value="1">
+                    <span class="unchecked"><span class="glyphicon glyphicon-ok"></span></span>
+                    <span><a href="<?=h($terms_url)?>" target="_blank">Hükümlere ve koşullara</a> katılıyorum.</span>
+                </label>
+            </div>
+        <?php endif ?>
+                
+        </div>
+
+        <div class="form-group">
+
+            <?php
+                // formnovalidate prevents browser from validating fields
+                // (e.g. required fields) when update button is clicked.
+                // This allows customer to partially complete and update cart.
+                // Browser validation will only occur for checkout button.
+            ?>
+            
+            <button type="submit" name="submit_update" class="btn btn-secondary btn-lg" formnovalidate>
+                <?=h($update_button_label)?>
+            </button>
+
+            <?php
+                // If there is at least one payment method and order is
+                // allowed to be submitted, then show purchase now button.
+                if ($purchase_now_button):
+            ?>
+                <button
+                    type="submit"
+                    name="submit_purchase_now"
+                    class="purchase_button btn btn-primary btn-lg"
+
+                    <?php if ($paypal_express_checkout): ?>
+                        data-paypal-label="Continue to PayPal"
+                    <?php endif ?>
+                >
+                    <?=h($purchase_now_button_label)?>
+                </button>
+            <?php endif ?>
+
+        </div>
+
+        <?=$system // Required hidden fields and JS (do not remove) ?>
+
+    </form>
+
+    <p class="text-muted">
+        <small>
+            Bu <?=h($shopping_cart_label)?> kaydedildi. Bu <?=h($shopping_cart_label)?>'i daha sonra almak için lütfen bu bağlantıyı kullanın:<br>
+            <a href="<?=h($retrieve_order_url)?>"><?=h($retrieve_order_url)?></a>
+        </small>
+    </p>
+
+<?php endif ?>
+
+<?php if ($currency and $recipients): ?>
+
+    <form <?=$currency_attributes?>>
+
+        <div class="form-group">
+            <label for="currency_id" class="sr-only">Para Birimi</label>
+            <div class="select-option">
+                <i class="ti-angle-down"></i>
+                <select name="currency_id" id="currency_id"></select>
+            </div>
+        </div>
+
+        <?=$currency_system // Required hidden fields and JS (do not remove) ?>
+
+    </form>
+
+<?php endif ?>
+
+</div>
