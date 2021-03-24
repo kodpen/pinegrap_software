@@ -1,0 +1,292 @@
+/*Primary colors */
+a {
+  color: SteelBlue;
+}
+.label {
+  background: SteelBlue;
+}
+.bg-secondary blockquote {
+  border-color: SteelBlue;
+}
+.bg-primary {
+  background: SteelBlue !important;
+}
+.color-primary {
+  color: SteelBlue !important;
+}
+.background-multiply .background-image-holder {
+  background-color: SteelBlue !important;
+  background-blend-mode: multiply;
+}
+.btn,
+a.btn:visited {
+  color: SteelBlue;
+  border: 2px solid;
+  border-color: SteelBlue;
+  background-color: #fff;
+}
+.bg-dark .btn-primary,
+.btn-primary,
+.btn-primary:visited,
+.btn-primary:active,
+a.btn-primary:visited,
+a.btn-primary:active {
+    background-color: SteelBlue;
+    border-color: SteelBlue;
+    color: #fff;
+}
+.btn-filled,
+a.btn-filled:visited,
+a.btn-filled:active {
+  border-color: SteelBlue;
+  background-color: SteelBlue;
+  color: #fff;
+}
+.btn-primary.disabled, 
+.btn-primary[disabled], 
+fieldset[disabled] .btn-primary, 
+.btn-primary.disabled:hover, 
+.btn-primary[disabled]:hover, 
+fieldset[disabled] .btn-primary:hover, 
+.btn-primary.disabled:focus, 
+.btn-primary[disabled]:focus, 
+fieldset[disabled] .btn-primary:focus, 
+.btn-primary.disabled:active, 
+.btn-primary[disabled]:active, 
+fieldset[disabled] .btn-primary:active, 
+.btn-primary.disabled.active, 
+.btn-primary[disabled].active, 
+fieldset[disabled] .btn-primary.active { 
+	background-color: SteelBlue;
+    border-color: SteelBlue;
+}
+a.btn-primary.disabled, 
+a.btn-primary[disabled], 
+a.btn-primary.disabled:hover, 
+a.btn-primary[disabled]:hover, 
+a.btn-primary.disabled:focus, 
+a.btn-primary[disabled]:focus, 
+a.btn-primary.disabled:active, 
+a.btn-primary[disabled]:active, 
+a.btn-primary.disabled.active, 
+a.btn-primary[disabled].active { 
+	background-color: SteelBlue;
+    border-color: SteelBlue;
+}
+.btn-xs,
+a.btn-xs,
+a.btn-xs:visited,
+a.btn-xs:active {
+    border-color: SteelBlue;
+}
+.bg-dark .btn.btn-primary {
+  	background-color: SteelBlue;
+}
+.widget-handle .cart .label {
+  background: SteelBlue;
+}
+.bg-primary input[type="submit"],
+.bg-primary button[type="submit"],
+.bg-primary button[type="button"]{
+  background: #fff;
+  color: SteelBlue;
+}
+input[type="submit"].hollow,
+button[type="submit"].hollow,
+button[type="button"].hollow{
+  background: none;
+  border: 2px solid SteelBlue;
+  color: SteelBlue;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+}
+input[type="submit"].hollow:hover,
+button[type="submit"].hollow:hover,
+button[type="button"].hollow:hover{
+  background: SteelBlue;
+  color: #fff;
+}
+.checkbox-option.checked .inner {
+  transform: translate3d(25px, 0, 0);
+  -webkit-transform: translate3d(25px, 0, 0);
+  -moz-transform: translate3d(25px, 0, 0);
+  background: SteelBlue;
+}
+.accordion-1 .active .title {
+  background: SteelBlue;
+  color: #fff;
+}
+.accordion-1 .active .title:hover {
+  background: SteelBlue;
+}
+.button-tabs .active .tab-title {
+  background: SteelBlue;
+  color: #fff;
+}
+.button-tabs .active .tab-title:hover {
+  background: SteelBlue;
+}
+.text-tabs .tab-title:after {
+  background: SteelBlue;
+}
+.text-tabs .active .tab-title {
+  opacity: 1;
+  color: SteelBlue;
+}
+.icon-tabs .active .tab-title {
+  color: SteelBlue;
+  opacity: 1;
+}
+.icon-tabs .active .tab-title i {
+  color: SteelBlue;
+}
+.progress-bar {
+  background: SteelBlue;
+  box-shadow: none !important;
+}
+.progress-2 .bar-holder {
+  border: 1px solid SteelBlue;
+}
+.feature-1 i {
+  color: SteelBlue;
+}
+.feature-2 i {
+  border: 1px solid SteelBlue;
+  color: SteelBlue;
+}
+.feature-2 i:hover,
+.feature-2.filled i {
+  background: SteelBlue;
+  color: #fff;
+}
+.feature-3 i {
+  color: SteelBlue;
+}
+.feature-color:nth-of-type(1) {
+  background: SteelBlue;
+}
+.pricing-table.emphasis {
+  background: SteelBlue;
+  color: #fff;
+}
+.cart-overview a:hover {
+  color: SteelBlue;
+}
+.product-single .price:not(.old-price) {
+  color: SteelBlue;
+}
+.masonry-item blockquote:hover {
+  background: SteelBlue;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  color: #fff;
+}
+.spinner {
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 2px 1px 0px SteelBlue;
+}
+.filters li {
+  border: 2px solid SteelBlue;
+  color: SteelBlue;
+}
+.filters li.active {
+  border-color: SteelBlue;
+  opacity: 1;
+}
+.sc-background-orange {
+  background: SteelBlue !important;
+}
+.primary-color {
+	color: SteelBlue;
+}
+.primary-background-color {
+	background-color: SteelBlue;
+    color: #fff;
+}
+.software_form_item_view .back_button {
+	background-color: #fff !important;
+    color: SteelBlue !important;
+}
+.software_form_item_view .back_button:focus,
+.software_form_item_view .back_button:hover {
+	background-color:  SteelBlue !important;
+    color: #fff  !important;
+}
+.feature.bordered.text-center .btn {
+	width: 100%;
+    border-color: SteelBlue;
+    background: SteelBlue;
+    color: #fff;
+}
+.link-list > li.active > a, .link-list > li.active > a:hover, .link-list > li.active > a:focus {
+    background-color: SteelBlue;
+    color: #fff;
+}
+.upcoming-concerts-widget {
+	background-color: SteelBlue;
+    color: #fff;
+}
+
+/* shade lighter of primary */
+.btn:hover,
+.btn:focus,
+a.btn:hover,
+a.btn:focus {
+  background-color: #5a91bf;
+  border-color: #5a91bf;
+  color: #fff;
+}
+.bg-dark .btn-primary:hover,
+.bg-dark .btn-primary:focus,
+.btn-primary:hover,
+.btn-primary:focus,
+a.btn-primary:hover,
+a.btn-primary:focus,
+.btn-filled:hover,
+.btn-filled:focus,
+a.btn-filled:hover,
+a.btn-filled:focus {
+  background-color: #5a91bf;
+  border-color: #5a91bf;
+  color: #fff;
+}
+.feature.bordered.text-center .btn:hover,
+.feature.bordered.text-center .btn:focus {
+  	background: #5a91bf;
+  	border-color: #5a91bf;
+  	color: #fff;
+}
+.bg-primary .list-inline i {
+  color: #5a91bf;
+}
+.bg-primary .progress-2 .bar-holder {
+  border-color: #5a91bf;
+}
+
+
+/* shade darker of primary */
+.feature-color:nth-of-type(2) {
+  background: #396a93;
+}
+.feature-color:nth-of-type(3) {
+  background: #396a93;
+}
+.software_order_receipt ~ .fieldset {
+    border-radius: 0;
+    border: none;
+	background-color: #5a91bf;
+	color: #396a93;
+}
+.software_order_receipt ~ .fieldset .legend {
+	color: #396a93;
+	border: none;
+}
+.account.heading {
+    background: #5a91bf;
+    color: #396a93;
+}
+.account.data {
+    background: #5a91bf;
+    color: #396a93;
+}
