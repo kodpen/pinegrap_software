@@ -1,4 +1,4 @@
-##### Pinegrap Content Management System
+## Pinegrap Content Management System
 
 Languages: **English, Turkish**
 
