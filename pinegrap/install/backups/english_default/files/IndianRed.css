@@ -1,0 +1,292 @@
+/*Primary colors */
+a {
+  color: IndianRed;
+}
+.label {
+  background: IndianRed;
+}
+.bg-secondary blockquote {
+  border-color: IndianRed;
+}
+.bg-primary {
+  background: IndianRed !important;
+}
+.color-primary {
+  color: IndianRed !important;
+}
+.background-multiply .background-image-holder {
+  background-color: IndianRed !important;
+  background-blend-mode: multiply;
+}
+.btn,
+a.btn:visited {
+  color: IndianRed;
+  border: 2px solid;
+  border-color: IndianRed;
+  background-color: #fff;
+}
+.bg-dark .btn-primary,
+.btn-primary,
+.btn-primary:visited,
+.btn-primary:active,
+a.btn-primary:visited,
+a.btn-primary:active {
+    background-color: IndianRed;
+    border-color: IndianRed;
+    color: #fff;
+}
+.btn-filled,
+a.btn-filled:visited,
+a.btn-filled:active {
+  border-color: IndianRed;
+  background-color: IndianRed;
+  color: #fff;
+}
+.btn-primary.disabled, 
+.btn-primary[disabled], 
+fieldset[disabled] .btn-primary, 
+.btn-primary.disabled:hover, 
+.btn-primary[disabled]:hover, 
+fieldset[disabled] .btn-primary:hover, 
+.btn-primary.disabled:focus, 
+.btn-primary[disabled]:focus, 
+fieldset[disabled] .btn-primary:focus, 
+.btn-primary.disabled:active, 
+.btn-primary[disabled]:active, 
+fieldset[disabled] .btn-primary:active, 
+.btn-primary.disabled.active, 
+.btn-primary[disabled].active, 
+fieldset[disabled] .btn-primary.active { 
+	background-color: IndianRed;
+    border-color: IndianRed;
+}
+a.btn-primary.disabled, 
+a.btn-primary[disabled], 
+a.btn-primary.disabled:hover, 
+a.btn-primary[disabled]:hover, 
+a.btn-primary.disabled:focus, 
+a.btn-primary[disabled]:focus, 
+a.btn-primary.disabled:active, 
+a.btn-primary[disabled]:active, 
+a.btn-primary.disabled.active, 
+a.btn-primary[disabled].active { 
+	background-color: IndianRed;
+    border-color: IndianRed;
+}
+.btn-xs,
+a.btn-xs,
+a.btn-xs:visited,
+a.btn-xs:active {
+    border-color: IndianRed;
+}
+.bg-dark .btn.btn-primary {
+  	background-color: IndianRed;
+}
+.widget-handle .cart .label {
+  background: IndianRed;
+}
+.bg-primary input[type="submit"],
+.bg-primary button[type="submit"],
+.bg-primary button[type="button"]{
+  background: #fff;
+  color: IndianRed;
+}
+input[type="submit"].hollow,
+button[type="submit"].hollow,
+button[type="button"].hollow{
+  background: none;
+  border: 2px solid IndianRed;
+  color: IndianRed;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+}
+input[type="submit"].hollow:hover,
+button[type="submit"].hollow:hover,
+button[type="button"].hollow:hover{
+  background: IndianRed;
+  color: #fff;
+}
+.checkbox-option.checked .inner {
+  transform: translate3d(25px, 0, 0);
+  -webkit-transform: translate3d(25px, 0, 0);
+  -moz-transform: translate3d(25px, 0, 0);
+  background: IndianRed;
+}
+.accordion-1 .active .title {
+  background: IndianRed;
+  color: #fff;
+}
+.accordion-1 .active .title:hover {
+  background: IndianRed;
+}
+.button-tabs .active .tab-title {
+  background: IndianRed;
+  color: #fff;
+}
+.button-tabs .active .tab-title:hover {
+  background: IndianRed;
+}
+.text-tabs .tab-title:after {
+  background: IndianRed;
+}
+.text-tabs .active .tab-title {
+  opacity: 1;
+  color: IndianRed;
+}
+.icon-tabs .active .tab-title {
+  color: IndianRed;
+  opacity: 1;
+}
+.icon-tabs .active .tab-title i {
+  color: IndianRed;
+}
+.progress-bar {
+  background: IndianRed;
+  box-shadow: none !important;
+}
+.progress-2 .bar-holder {
+  border: 1px solid IndianRed;
+}
+.feature-1 i {
+  color: IndianRed;
+}
+.feature-2 i {
+  border: 1px solid IndianRed;
+  color: IndianRed;
+}
+.feature-2 i:hover,
+.feature-2.filled i {
+  background: IndianRed;
+  color: #fff;
+}
+.feature-3 i {
+  color: IndianRed;
+}
+.feature-color:nth-of-type(1) {
+  background: IndianRed;
+}
+.pricing-table.emphasis {
+  background: IndianRed;
+  color: #fff;
+}
+.cart-overview a:hover {
+  color: IndianRed;
+}
+.product-single .price:not(.old-price) {
+  color: IndianRed;
+}
+.masonry-item blockquote:hover {
+  background: IndianRed;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  color: #fff;
+}
+.spinner {
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 2px 1px 0px IndianRed;
+}
+.filters li {
+  border: 2px solid IndianRed;
+  color: IndianRed;
+}
+.filters li.active {
+  border-color: IndianRed;
+  opacity: 1;
+}
+.sc-background-orange {
+  background: IndianRed !important;
+}
+.primary-color {
+	color: IndianRed;
+}
+.primary-background-color {
+	background-color: IndianRed;
+    color: #fff;
+}
+.software_form_item_view .back_button {
+	background-color: #fff !important;
+    color: IndianRed !important;
+}
+.software_form_item_view .back_button:focus,
+.software_form_item_view .back_button:hover {
+	background-color:  IndianRed !important;
+    color: #fff  !important;
+}
+.feature.bordered.text-center .btn {
+	width: 100%;
+    border-color: IndianRed;
+    background: IndianRed;
+    color: #fff;
+}
+.link-list > li.active > a, .link-list > li.active > a:hover, .link-list > li.active > a:focus {
+    background-color: IndianRed;
+    color: #fff;
+}
+.upcoming-concerts-widget {
+	background-color: IndianRed;
+    color: #fff;
+}
+
+/* shade lighter of primary */
+.btn:hover,
+.btn:focus,
+a.btn:hover,
+a.btn:focus {
+  background-color: #d57676;
+  border-color: #d57676;
+  color: #fff;
+}
+.bg-dark .btn-primary:hover,
+.bg-dark .btn-primary:focus,
+.btn-primary:hover,
+.btn-primary:focus,
+a.btn-primary:hover,
+a.btn-primary:focus,
+.btn-filled:hover,
+.btn-filled:focus,
+a.btn-filled:hover,
+a.btn-filled:focus {
+  background-color: #d57676;
+  border-color: #d57676;
+  color: #fff;
+}
+.feature.bordered.text-center .btn:hover,
+.feature.bordered.text-center .btn:focus {
+  	background: #d57676;
+  	border-color: #d57676;
+  	color: #fff;
+}
+.bg-primary .list-inline i {
+  color: #d57676;
+}
+.bg-primary .progress-2 .bar-holder {
+  border-color: #d57676;
+}
+
+
+/* shade darker of primary */
+.feature-color:nth-of-type(2) {
+  background: #c33c3c;
+}
+.feature-color:nth-of-type(3) {
+  background: #c33c3c;
+}
+.software_order_receipt ~ .fieldset {
+    border-radius: 0;
+    border: none;
+	background-color: #d57676;
+	color: #c33c3c;
+}
+.software_order_receipt ~ .fieldset .legend {
+	color: #c33c3c;
+	border: none;
+}
+.account.heading {
+    background: #d57676;
+    color: #c33c3c;
+}
+.account.data {
+    background: #d57676;
+    color: #c33c3c;
+}

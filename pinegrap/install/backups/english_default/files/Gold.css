@@ -1,0 +1,292 @@
+/*Primary colors */
+a {
+  color: Gold;
+}
+.label {
+  background: Gold;
+}
+.bg-secondary blockquote {
+  border-color: Gold;
+}
+.bg-primary {
+  background: Gold !important;
+}
+.color-primary {
+  color: Gold !important;
+}
+.background-multiply .background-image-holder {
+  background-color: Gold !important;
+  background-blend-mode: multiply;
+}
+.btn,
+a.btn:visited {
+  color: Gold;
+  border: 2px solid;
+  border-color: Gold;
+  background-color: #fff;
+}
+.bg-dark .btn-primary,
+.btn-primary,
+.btn-primary:visited,
+.btn-primary:active,
+a.btn-primary:visited,
+a.btn-primary:active {
+    background-color: Gold;
+    border-color: Gold;
+    color: #fff;
+}
+.btn-filled,
+a.btn-filled:visited,
+a.btn-filled:active {
+  border-color: Gold;
+  background-color: Gold;
+  color: #fff;
+}
+.btn-primary.disabled, 
+.btn-primary[disabled], 
+fieldset[disabled] .btn-primary, 
+.btn-primary.disabled:hover, 
+.btn-primary[disabled]:hover, 
+fieldset[disabled] .btn-primary:hover, 
+.btn-primary.disabled:focus, 
+.btn-primary[disabled]:focus, 
+fieldset[disabled] .btn-primary:focus, 
+.btn-primary.disabled:active, 
+.btn-primary[disabled]:active, 
+fieldset[disabled] .btn-primary:active, 
+.btn-primary.disabled.active, 
+.btn-primary[disabled].active, 
+fieldset[disabled] .btn-primary.active { 
+	background-color: Gold;
+    border-color: Gold;
+}
+a.btn-primary.disabled, 
+a.btn-primary[disabled], 
+a.btn-primary.disabled:hover, 
+a.btn-primary[disabled]:hover, 
+a.btn-primary.disabled:focus, 
+a.btn-primary[disabled]:focus, 
+a.btn-primary.disabled:active, 
+a.btn-primary[disabled]:active, 
+a.btn-primary.disabled.active, 
+a.btn-primary[disabled].active { 
+	background-color: Gold;
+    border-color: Gold;
+}
+.btn-xs,
+a.btn-xs,
+a.btn-xs:visited,
+a.btn-xs:active {
+    border-color: Gold;
+}
+.bg-dark .btn.btn-primary {
+  	background-color: Gold;
+}
+.widget-handle .cart .label {
+  background: Gold;
+}
+.bg-primary input[type="submit"],
+.bg-primary button[type="submit"],
+.bg-primary button[type="button"]{
+  background: #fff;
+  color: Gold;
+}
+input[type="submit"].hollow,
+button[type="submit"].hollow,
+button[type="button"].hollow{
+  background: none;
+  border: 2px solid Gold;
+  color: Gold;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+}
+input[type="submit"].hollow:hover,
+button[type="submit"].hollow:hover,
+button[type="button"].hollow:hover{
+  background: Gold;
+  color: #fff;
+}
+.checkbox-option.checked .inner {
+  transform: translate3d(25px, 0, 0);
+  -webkit-transform: translate3d(25px, 0, 0);
+  -moz-transform: translate3d(25px, 0, 0);
+  background: Gold;
+}
+.accordion-1 .active .title {
+  background: Gold;
+  color: #fff;
+}
+.accordion-1 .active .title:hover {
+  background: Gold;
+}
+.button-tabs .active .tab-title {
+  background: Gold;
+  color: #fff;
+}
+.button-tabs .active .tab-title:hover {
+  background: Gold;
+}
+.text-tabs .tab-title:after {
+  background: Gold;
+}
+.text-tabs .active .tab-title {
+  opacity: 1;
+  color: Gold;
+}
+.icon-tabs .active .tab-title {
+  color: Gold;
+  opacity: 1;
+}
+.icon-tabs .active .tab-title i {
+  color: Gold;
+}
+.progress-bar {
+  background: Gold;
+  box-shadow: none !important;
+}
+.progress-2 .bar-holder {
+  border: 1px solid Gold;
+}
+.feature-1 i {
+  color: Gold;
+}
+.feature-2 i {
+  border: 1px solid Gold;
+  color: Gold;
+}
+.feature-2 i:hover,
+.feature-2.filled i {
+  background: Gold;
+  color: #fff;
+}
+.feature-3 i {
+  color: Gold;
+}
+.feature-color:nth-of-type(1) {
+  background: Gold;
+}
+.pricing-table.emphasis {
+  background: Gold;
+  color: #fff;
+}
+.cart-overview a:hover {
+  color: Gold;
+}
+.product-single .price:not(.old-price) {
+  color: Gold;
+}
+.masonry-item blockquote:hover {
+  background: Gold;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  color: #fff;
+}
+.spinner {
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 2px 1px 0px Gold;
+}
+.filters li {
+  border: 2px solid Gold;
+  color: Gold;
+}
+.filters li.active {
+  border-color: Gold;
+  opacity: 1;
+}
+.sc-background-orange {
+  background: Gold !important;
+}
+.primary-color {
+	color: Gold;
+}
+.primary-background-color {
+	background-color: Gold;
+    color: #fff;
+}
+.software_form_item_view .back_button {
+	background-color: #fff !important;
+    color: Gold !important;
+}
+.software_form_item_view .back_button:focus,
+.software_form_item_view .back_button:hover {
+	background-color:  Gold !important;
+    color: #fff  !important;
+}
+.feature.bordered.text-center .btn {
+	width: 100%;
+    border-color: Gold;
+    background: Gold;
+    color: #fff;
+}
+.link-list > li.active > a, .link-list > li.active > a:hover, .link-list > li.active > a:focus {
+    background-color: Gold;
+    color: #fff;
+}
+.upcoming-concerts-widget {
+	background-color: Gold;
+    color: #fff;
+}
+
+/* shade lighter of primary */
+.btn:hover,
+.btn:focus,
+a.btn:hover,
+a.btn:focus {
+  background-color: #ffe033;
+  border-color: #ffe033;
+  color: #fff;
+}
+.bg-dark .btn-primary:hover,
+.bg-dark .btn-primary:focus,
+.btn-primary:hover,
+.btn-primary:focus,
+a.btn-primary:hover,
+a.btn-primary:focus,
+.btn-filled:hover,
+.btn-filled:focus,
+a.btn-filled:hover,
+a.btn-filled:focus {
+  background-color: #ffe033;
+  border-color: #ffe033;
+  color: #fff;
+}
+.feature.bordered.text-center .btn:hover,
+.feature.bordered.text-center .btn:focus {
+  	background: #ffe033;
+  	border-color: #ffe033;
+  	color: #fff;
+}
+.bg-primary .list-inline i {
+  color: #ffe033;
+}
+.bg-primary .progress-2 .bar-holder {
+  border-color: #ffe033;
+}
+
+
+/* shade darker of primary */
+.feature-color:nth-of-type(2) {
+  background: #ccad00;
+}
+.feature-color:nth-of-type(3) {
+  background: #ccad00;
+}
+.software_order_receipt ~ .fieldset {
+    border-radius: 0;
+    border: none;
+	background-color: #ffe033;
+	color: #ccad00;
+}
+.software_order_receipt ~ .fieldset .legend {
+	color: #ccad00;
+	border: none;
+}
+.account.heading {
+    background: #ffe033;
+    color: #ccad00;
+}
+.account.data {
+    background: #ffe033;
+    color: #ccad00;
+}

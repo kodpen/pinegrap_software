@@ -1,0 +1,292 @@
+/*Primary colors */
+a {
+  color: GreenYellow;
+}
+.label {
+  background: GreenYellow;
+}
+.bg-secondary blockquote {
+  border-color: GreenYellow;
+}
+.bg-primary {
+  background: GreenYellow !important;
+}
+.color-primary {
+  color: GreenYellow !important;
+}
+.background-multiply .background-image-holder {
+  background-color: GreenYellow !important;
+  background-blend-mode: multiply;
+}
+.btn,
+a.btn:visited {
+  color: GreenYellow;
+  border: 2px solid;
+  border-color: GreenYellow;
+  background-color: #fff;
+}
+.bg-dark .btn-primary,
+.btn-primary,
+.btn-primary:visited,
+.btn-primary:active,
+a.btn-primary:visited,
+a.btn-primary:active {
+    background-color: GreenYellow;
+    border-color: GreenYellow;
+    color: #fff;
+}
+.btn-filled,
+a.btn-filled:visited,
+a.btn-filled:active {
+  border-color: GreenYellow;
+  background-color: GreenYellow;
+  color: #fff;
+}
+.btn-primary.disabled, 
+.btn-primary[disabled], 
+fieldset[disabled] .btn-primary, 
+.btn-primary.disabled:hover, 
+.btn-primary[disabled]:hover, 
+fieldset[disabled] .btn-primary:hover, 
+.btn-primary.disabled:focus, 
+.btn-primary[disabled]:focus, 
+fieldset[disabled] .btn-primary:focus, 
+.btn-primary.disabled:active, 
+.btn-primary[disabled]:active, 
+fieldset[disabled] .btn-primary:active, 
+.btn-primary.disabled.active, 
+.btn-primary[disabled].active, 
+fieldset[disabled] .btn-primary.active { 
+	background-color: GreenYellow;
+    border-color: GreenYellow;
+}
+a.btn-primary.disabled, 
+a.btn-primary[disabled], 
+a.btn-primary.disabled:hover, 
+a.btn-primary[disabled]:hover, 
+a.btn-primary.disabled:focus, 
+a.btn-primary[disabled]:focus, 
+a.btn-primary.disabled:active, 
+a.btn-primary[disabled]:active, 
+a.btn-primary.disabled.active, 
+a.btn-primary[disabled].active { 
+	background-color: GreenYellow;
+    border-color: GreenYellow;
+}
+.btn-xs,
+a.btn-xs,
+a.btn-xs:visited,
+a.btn-xs:active {
+    border-color: GreenYellow;
+}
+.bg-dark .btn.btn-primary {
+  	background-color: GreenYellow;
+}
+.widget-handle .cart .label {
+  background: GreenYellow;
+}
+.bg-primary input[type="submit"],
+.bg-primary button[type="submit"],
+.bg-primary button[type="button"]{
+  background: #fff;
+  color: GreenYellow;
+}
+input[type="submit"].hollow,
+button[type="submit"].hollow,
+button[type="button"].hollow{
+  background: none;
+  border: 2px solid GreenYellow;
+  color: GreenYellow;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+}
+input[type="submit"].hollow:hover,
+button[type="submit"].hollow:hover,
+button[type="button"].hollow:hover{
+  background: GreenYellow;
+  color: #fff;
+}
+.checkbox-option.checked .inner {
+  transform: translate3d(25px, 0, 0);
+  -webkit-transform: translate3d(25px, 0, 0);
+  -moz-transform: translate3d(25px, 0, 0);
+  background: GreenYellow;
+}
+.accordion-1 .active .title {
+  background: GreenYellow;
+  color: #fff;
+}
+.accordion-1 .active .title:hover {
+  background: GreenYellow;
+}
+.button-tabs .active .tab-title {
+  background: GreenYellow;
+  color: #fff;
+}
+.button-tabs .active .tab-title:hover {
+  background: GreenYellow;
+}
+.text-tabs .tab-title:after {
+  background: GreenYellow;
+}
+.text-tabs .active .tab-title {
+  opacity: 1;
+  color: GreenYellow;
+}
+.icon-tabs .active .tab-title {
+  color: GreenYellow;
+  opacity: 1;
+}
+.icon-tabs .active .tab-title i {
+  color: GreenYellow;
+}
+.progress-bar {
+  background: GreenYellow;
+  box-shadow: none !important;
+}
+.progress-2 .bar-holder {
+  border: 1px solid GreenYellow;
+}
+.feature-1 i {
+  color: GreenYellow;
+}
+.feature-2 i {
+  border: 1px solid GreenYellow;
+  color: GreenYellow;
+}
+.feature-2 i:hover,
+.feature-2.filled i {
+  background: GreenYellow;
+  color: #fff;
+}
+.feature-3 i {
+  color: GreenYellow;
+}
+.feature-color:nth-of-type(1) {
+  background: GreenYellow;
+}
+.pricing-table.emphasis {
+  background: GreenYellow;
+  color: #fff;
+}
+.cart-overview a:hover {
+  color: GreenYellow;
+}
+.product-single .price:not(.old-price) {
+  color: GreenYellow;
+}
+.masonry-item blockquote:hover {
+  background: GreenYellow;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  color: #fff;
+}
+.spinner {
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 2px 1px 0px GreenYellow;
+}
+.filters li {
+  border: 2px solid GreenYellow;
+  color: GreenYellow;
+}
+.filters li.active {
+  border-color: GreenYellow;
+  opacity: 1;
+}
+.sc-background-orange {
+  background: GreenYellow !important;
+}
+.primary-color {
+	color: GreenYellow;
+}
+.primary-background-color {
+	background-color: GreenYellow;
+    color: #fff;
+}
+.software_form_item_view .back_button {
+	background-color: #fff !important;
+    color: GreenYellow !important;
+}
+.software_form_item_view .back_button:focus,
+.software_form_item_view .back_button:hover {
+	background-color:  GreenYellow !important;
+    color: #fff  !important;
+}
+.feature.bordered.text-center .btn {
+	width: 100%;
+    border-color: GreenYellow;
+    background: GreenYellow;
+    color: #fff;
+}
+.link-list > li.active > a, .link-list > li.active > a:hover, .link-list > li.active > a:focus {
+    background-color: GreenYellow;
+    color: #fff;
+}
+.upcoming-concerts-widget {
+	background-color: GreenYellow;
+    color: #fff;
+}
+
+/* shade lighter of primary */
+.btn:hover,
+.btn:focus,
+a.btn:hover,
+a.btn:focus {
+  background-color: #b8ff4d;
+  border-color: #b8ff4d;
+  color: #fff;
+}
+.bg-dark .btn-primary:hover,
+.bg-dark .btn-primary:focus,
+.btn-primary:hover,
+.btn-primary:focus,
+a.btn-primary:hover,
+a.btn-primary:focus,
+.btn-filled:hover,
+.btn-filled:focus,
+a.btn-filled:hover,
+a.btn-filled:focus {
+  background-color: #b8ff4d;
+  border-color: #b8ff4d;
+  color: #fff;
+}
+.feature.bordered.text-center .btn:hover,
+.feature.bordered.text-center .btn:focus {
+  	background: #b8ff4d;
+  	border-color: #b8ff4d;
+  	color: #fff;
+}
+.bg-primary .list-inline i {
+  color: #b8ff4d;
+}
+.bg-primary .progress-2 .bar-holder {
+  border-color: #b8ff4d;
+}
+
+
+/* shade darker of primary */
+.feature-color:nth-of-type(2) {
+  background: #99ff00;
+}
+.feature-color:nth-of-type(3) {
+  background: #99ff00;
+}
+.software_order_receipt ~ .fieldset {
+    border-radius: 0;
+    border: none;
+	background-color: #b8ff4d;
+	color: #99ff00;
+}
+.software_order_receipt ~ .fieldset .legend {
+	color: #99ff00;
+	border: none;
+}
+.account.heading {
+    background: #b8ff4d;
+    color: #99ff00;
+}
+.account.data {
+    background: #b8ff4d;
+    color: #99ff00;
+}

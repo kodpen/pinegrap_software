@@ -1,0 +1,292 @@
+/*Primary colors */
+a {
+  color: Brown;
+}
+.label {
+  background: Brown;
+}
+.bg-secondary blockquote {
+  border-color: Brown;
+}
+.bg-primary {
+  background: Brown !important;
+}
+.color-primary {
+  color: Brown !important;
+}
+.background-multiply .background-image-holder {
+  background-color: Brown !important;
+  background-blend-mode: multiply;
+}
+.btn,
+a.btn:visited {
+  color: Brown;
+  border: 2px solid;
+  border-color: Brown;
+  background-color: #fff;
+}
+.bg-dark .btn-primary,
+.btn-primary,
+.btn-primary:visited,
+.btn-primary:active,
+a.btn-primary:visited,
+a.btn-primary:active {
+    background-color: Brown;
+    border-color: Brown;
+    color: #fff;
+}
+.btn-filled,
+a.btn-filled:visited,
+a.btn-filled:active {
+  border-color: Brown;
+  background-color: Brown;
+  color: #fff;
+}
+.btn-primary.disabled, 
+.btn-primary[disabled], 
+fieldset[disabled] .btn-primary, 
+.btn-primary.disabled:hover, 
+.btn-primary[disabled]:hover, 
+fieldset[disabled] .btn-primary:hover, 
+.btn-primary.disabled:focus, 
+.btn-primary[disabled]:focus, 
+fieldset[disabled] .btn-primary:focus, 
+.btn-primary.disabled:active, 
+.btn-primary[disabled]:active, 
+fieldset[disabled] .btn-primary:active, 
+.btn-primary.disabled.active, 
+.btn-primary[disabled].active, 
+fieldset[disabled] .btn-primary.active { 
+	background-color: Brown;
+    border-color: Brown;
+}
+a.btn-primary.disabled, 
+a.btn-primary[disabled], 
+a.btn-primary.disabled:hover, 
+a.btn-primary[disabled]:hover, 
+a.btn-primary.disabled:focus, 
+a.btn-primary[disabled]:focus, 
+a.btn-primary.disabled:active, 
+a.btn-primary[disabled]:active, 
+a.btn-primary.disabled.active, 
+a.btn-primary[disabled].active { 
+	background-color: Brown;
+    border-color: Brown;
+}
+.btn-xs,
+a.btn-xs,
+a.btn-xs:visited,
+a.btn-xs:active {
+    border-color: Brown;
+}
+.bg-dark .btn.btn-primary {
+  	background-color: Brown;
+}
+.widget-handle .cart .label {
+  background: Brown;
+}
+.bg-primary input[type="submit"],
+.bg-primary button[type="submit"],
+.bg-primary button[type="button"]{
+  background: #fff;
+  color: Brown;
+}
+input[type="submit"].hollow,
+button[type="submit"].hollow,
+button[type="button"].hollow{
+  background: none;
+  border: 2px solid Brown;
+  color: Brown;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+}
+input[type="submit"].hollow:hover,
+button[type="submit"].hollow:hover,
+button[type="button"].hollow:hover{
+  background: Brown;
+  color: #fff;
+}
+.checkbox-option.checked .inner {
+  transform: translate3d(25px, 0, 0);
+  -webkit-transform: translate3d(25px, 0, 0);
+  -moz-transform: translate3d(25px, 0, 0);
+  background: Brown;
+}
+.accordion-1 .active .title {
+  background: Brown;
+  color: #fff;
+}
+.accordion-1 .active .title:hover {
+  background: Brown;
+}
+.button-tabs .active .tab-title {
+  background: Brown;
+  color: #fff;
+}
+.button-tabs .active .tab-title:hover {
+  background: Brown;
+}
+.text-tabs .tab-title:after {
+  background: Brown;
+}
+.text-tabs .active .tab-title {
+  opacity: 1;
+  color: Brown;
+}
+.icon-tabs .active .tab-title {
+  color: Brown;
+  opacity: 1;
+}
+.icon-tabs .active .tab-title i {
+  color: Brown;
+}
+.progress-bar {
+  background: Brown;
+  box-shadow: none !important;
+}
+.progress-2 .bar-holder {
+  border: 1px solid Brown;
+}
+.feature-1 i {
+  color: Brown;
+}
+.feature-2 i {
+  border: 1px solid Brown;
+  color: Brown;
+}
+.feature-2 i:hover,
+.feature-2.filled i {
+  background: Brown;
+  color: #fff;
+}
+.feature-3 i {
+  color: Brown;
+}
+.feature-color:nth-of-type(1) {
+  background: Brown;
+}
+.pricing-table.emphasis {
+  background: Brown;
+  color: #fff;
+}
+.cart-overview a:hover {
+  color: Brown;
+}
+.product-single .price:not(.old-price) {
+  color: Brown;
+}
+.masonry-item blockquote:hover {
+  background: Brown;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  color: #fff;
+}
+.spinner {
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 2px 1px 0px Brown;
+}
+.filters li {
+  border: 2px solid Brown;
+  color: Brown;
+}
+.filters li.active {
+  border-color: Brown;
+  opacity: 1;
+}
+.sc-background-orange {
+  background: Brown !important;
+}
+.primary-color {
+	color: Brown;
+}
+.primary-background-color {
+	background-color: Brown;
+    color: #fff;
+}
+.software_form_item_view .back_button {
+	background-color: #fff !important;
+    color: Brown !important;
+}
+.software_form_item_view .back_button:focus,
+.software_form_item_view .back_button:hover {
+	background-color:  Brown !important;
+    color: #fff  !important;
+}
+.feature.bordered.text-center .btn {
+	width: 100%;
+    border-color: Brown;
+    background: Brown;
+    color: #fff;
+}
+.link-list > li.active > a, .link-list > li.active > a:hover, .link-list > li.active > a:focus {
+    background-color: Brown;
+    color: #fff;
+}
+.upcoming-concerts-widget {
+	background-color: Brown;
+    color: #fff;
+}
+
+/* shade lighter of primary */
+.btn:hover,
+.btn:focus,
+a.btn:hover,
+a.btn:focus {
+  background-color: #cb3434;
+  border-color: #cb3434;
+  color: #fff;
+}
+.bg-dark .btn-primary:hover,
+.bg-dark .btn-primary:focus,
+.btn-primary:hover,
+.btn-primary:focus,
+a.btn-primary:hover,
+a.btn-primary:focus,
+.btn-filled:hover,
+.btn-filled:focus,
+a.btn-filled:hover,
+a.btn-filled:focus {
+  background-color: #cb3434;
+  border-color: #cb3434;
+  color: #fff;
+}
+.feature.bordered.text-center .btn:hover,
+.feature.bordered.text-center .btn:focus {
+  	background: #cb3434;
+  	border-color: #cb3434;
+  	color: #fff;
+}
+.bg-primary .list-inline i {
+  color: #cb3434;
+}
+.bg-primary .progress-2 .bar-holder {
+  border-color: #cb3434;
+}
+
+
+/* shade darker of primary */
+.feature-color:nth-of-type(2) {
+  background: #8e2525;
+}
+.feature-color:nth-of-type(3) {
+  background: #8e2525;
+}
+.software_order_receipt ~ .fieldset {
+    border-radius: 0;
+    border: none;
+	background-color: #cb3434;
+	color: #8e2525;
+}
+.software_order_receipt ~ .fieldset .legend {
+	color: #8e2525;
+	border: none;
+}
+.account.heading {
+    background: #cb3434;
+    color: #8e2525;
+}
+.account.data {
+    background: #cb3434;
+    color: #8e2525;
+}
