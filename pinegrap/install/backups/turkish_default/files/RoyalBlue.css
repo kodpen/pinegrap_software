@@ -1,0 +1,292 @@
+/*Primary colors */
+a {
+  color: RoyalBlue;
+}
+.label {
+  background: RoyalBlue;
+}
+.bg-secondary blockquote {
+  border-color: RoyalBlue;
+}
+.bg-primary {
+  background: RoyalBlue !important;
+}
+.color-primary {
+  color: RoyalBlue !important;
+}
+.background-multiply .background-image-holder {
+  background-color: RoyalBlue !important;
+  background-blend-mode: multiply;
+}
+.btn,
+a.btn:visited {
+  color: RoyalBlue;
+  border: 2px solid;
+  border-color: RoyalBlue;
+  background-color: #fff;
+}
+.bg-dark .btn-primary,
+.btn-primary,
+.btn-primary:visited,
+.btn-primary:active,
+a.btn-primary:visited,
+a.btn-primary:active {
+    background-color: RoyalBlue;
+    border-color: RoyalBlue;
+    color: #fff;
+}
+.btn-filled,
+a.btn-filled:visited,
+a.btn-filled:active {
+  border-color: RoyalBlue;
+  background-color: RoyalBlue;
+  color: #fff;
+}
+.btn-primary.disabled, 
+.btn-primary[disabled], 
+fieldset[disabled] .btn-primary, 
+.btn-primary.disabled:hover, 
+.btn-primary[disabled]:hover, 
+fieldset[disabled] .btn-primary:hover, 
+.btn-primary.disabled:focus, 
+.btn-primary[disabled]:focus, 
+fieldset[disabled] .btn-primary:focus, 
+.btn-primary.disabled:active, 
+.btn-primary[disabled]:active, 
+fieldset[disabled] .btn-primary:active, 
+.btn-primary.disabled.active, 
+.btn-primary[disabled].active, 
+fieldset[disabled] .btn-primary.active { 
+	background-color: RoyalBlue;
+    border-color: RoyalBlue;
+}
+a.btn-primary.disabled, 
+a.btn-primary[disabled], 
+a.btn-primary.disabled:hover, 
+a.btn-primary[disabled]:hover, 
+a.btn-primary.disabled:focus, 
+a.btn-primary[disabled]:focus, 
+a.btn-primary.disabled:active, 
+a.btn-primary[disabled]:active, 
+a.btn-primary.disabled.active, 
+a.btn-primary[disabled].active { 
+	background-color: RoyalBlue;
+    border-color: RoyalBlue;
+}
+.btn-xs,
+a.btn-xs,
+a.btn-xs:visited,
+a.btn-xs:active {
+    border-color: RoyalBlue;
+}
+.bg-dark .btn.btn-primary {
+  	background-color: RoyalBlue;
+}
+.widget-handle .cart .label {
+  background: RoyalBlue;
+}
+.bg-primary input[type="submit"],
+.bg-primary button[type="submit"],
+.bg-primary button[type="button"]{
+  background: #fff;
+  color: RoyalBlue;
+}
+input[type="submit"].hollow,
+button[type="submit"].hollow,
+button[type="button"].hollow{
+  background: none;
+  border: 2px solid RoyalBlue;
+  color: RoyalBlue;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+}
+input[type="submit"].hollow:hover,
+button[type="submit"].hollow:hover,
+button[type="button"].hollow:hover{
+  background: RoyalBlue;
+  color: #fff;
+}
+.checkbox-option.checked .inner {
+  transform: translate3d(25px, 0, 0);
+  -webkit-transform: translate3d(25px, 0, 0);
+  -moz-transform: translate3d(25px, 0, 0);
+  background: RoyalBlue;
+}
+.accordion-1 .active .title {
+  background: RoyalBlue;
+  color: #fff;
+}
+.accordion-1 .active .title:hover {
+  background: RoyalBlue;
+}
+.button-tabs .active .tab-title {
+  background: RoyalBlue;
+  color: #fff;
+}
+.button-tabs .active .tab-title:hover {
+  background: RoyalBlue;
+}
+.text-tabs .tab-title:after {
+  background: RoyalBlue;
+}
+.text-tabs .active .tab-title {
+  opacity: 1;
+  color: RoyalBlue;
+}
+.icon-tabs .active .tab-title {
+  color: RoyalBlue;
+  opacity: 1;
+}
+.icon-tabs .active .tab-title i {
+  color: RoyalBlue;
+}
+.progress-bar {
+  background: RoyalBlue;
+  box-shadow: none !important;
+}
+.progress-2 .bar-holder {
+  border: 1px solid RoyalBlue;
+}
+.feature-1 i {
+  color: RoyalBlue;
+}
+.feature-2 i {
+  border: 1px solid RoyalBlue;
+  color: RoyalBlue;
+}
+.feature-2 i:hover,
+.feature-2.filled i {
+  background: RoyalBlue;
+  color: #fff;
+}
+.feature-3 i {
+  color: RoyalBlue;
+}
+.feature-color:nth-of-type(1) {
+  background: RoyalBlue;
+}
+.pricing-table.emphasis {
+  background: RoyalBlue;
+  color: #fff;
+}
+.cart-overview a:hover {
+  color: RoyalBlue;
+}
+.product-single .price:not(.old-price) {
+  color: RoyalBlue;
+}
+.masonry-item blockquote:hover {
+  background: RoyalBlue;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  color: #fff;
+}
+.spinner {
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 2px 1px 0px RoyalBlue;
+}
+.filters li {
+  border: 2px solid RoyalBlue;
+  color: RoyalBlue;
+}
+.filters li.active {
+  border-color: RoyalBlue;
+  opacity: 1;
+}
+.sc-background-orange {
+  background: RoyalBlue !important;
+}
+.primary-color {
+	color: RoyalBlue;
+}
+.primary-background-color {
+	background-color: RoyalBlue;
+    color: #fff;
+}
+.software_form_item_view .back_button {
+	background-color: #fff !important;
+    color: RoyalBlue !important;
+}
+.software_form_item_view .back_button:focus,
+.software_form_item_view .back_button:hover {
+	background-color:  RoyalBlue !important;
+    color: #fff  !important;
+}
+.feature.bordered.text-center .btn {
+	width: 100%;
+    border-color: RoyalBlue;
+    background: RoyalBlue;
+    color: #fff;
+}
+.link-list > li.active > a, .link-list > li.active > a:hover, .link-list > li.active > a:focus {
+    background-color: RoyalBlue;
+    color: #fff;
+}
+.upcoming-concerts-widget {
+	background-color: RoyalBlue;
+    color: #fff;
+}
+
+/* shade lighter of primary */
+.btn:hover,
+.btn:focus,
+a.btn:hover,
+a.btn:focus {
+  background-color: #6585e7;
+  border-color: #6585e7;
+  color: #fff;
+}
+.bg-dark .btn-primary:hover,
+.bg-dark .btn-primary:focus,
+.btn-primary:hover,
+.btn-primary:focus,
+a.btn-primary:hover,
+a.btn-primary:focus,
+.btn-filled:hover,
+.btn-filled:focus,
+a.btn-filled:hover,
+a.btn-filled:focus {
+  background-color: #6585e7;
+  border-color: #6585e7;
+  color: #fff;
+}
+.feature.bordered.text-center .btn:hover,
+.feature.bordered.text-center .btn:focus {
+  	background: #6585e7;
+  	border-color: #6585e7;
+  	color: #fff;
+}
+.bg-primary .list-inline i {
+  color: #6585e7;
+}
+.bg-primary .progress-2 .bar-holder {
+  border-color: #6585e7;
+}
+
+
+/* shade darker of primary */
+.feature-color:nth-of-type(2) {
+  background: #2251dd;
+}
+.feature-color:nth-of-type(3) {
+  background: #2251dd;
+}
+.software_order_receipt ~ .fieldset {
+    border-radius: 0;
+    border: none;
+	background-color: #6585e7;
+	color: #2251dd;
+}
+.software_order_receipt ~ .fieldset .legend {
+	color: #2251dd;
+	border: none;
+}
+.account.heading {
+    background: #6585e7;
+    color: #2251dd;
+}
+.account.data {
+    background: #6585e7;
+    color: #2251dd;
+}

@@ -1,0 +1,292 @@
+/*Primary colors */
+a {
+  color: Pink;
+}
+.label {
+  background: Pink;
+}
+.bg-secondary blockquote {
+  border-color: Pink;
+}
+.bg-primary {
+  background: Pink !important;
+}
+.color-primary {
+  color: Pink !important;
+}
+.background-multiply .background-image-holder {
+  background-color: Pink !important;
+  background-blend-mode: multiply;
+}
+.btn,
+a.btn:visited {
+  color: Pink;
+  border: 2px solid;
+  border-color: Pink;
+  background-color: #fff;
+}
+.bg-dark .btn-primary,
+.btn-primary,
+.btn-primary:visited,
+.btn-primary:active,
+a.btn-primary:visited,
+a.btn-primary:active {
+    background-color: Pink;
+    border-color: Pink;
+    color: #fff;
+}
+.btn-filled,
+a.btn-filled:visited,
+a.btn-filled:active {
+  border-color: Pink;
+  background-color: Pink;
+  color: #fff;
+}
+.btn-primary.disabled, 
+.btn-primary[disabled], 
+fieldset[disabled] .btn-primary, 
+.btn-primary.disabled:hover, 
+.btn-primary[disabled]:hover, 
+fieldset[disabled] .btn-primary:hover, 
+.btn-primary.disabled:focus, 
+.btn-primary[disabled]:focus, 
+fieldset[disabled] .btn-primary:focus, 
+.btn-primary.disabled:active, 
+.btn-primary[disabled]:active, 
+fieldset[disabled] .btn-primary:active, 
+.btn-primary.disabled.active, 
+.btn-primary[disabled].active, 
+fieldset[disabled] .btn-primary.active { 
+	background-color: Pink;
+    border-color: Pink;
+}
+a.btn-primary.disabled, 
+a.btn-primary[disabled], 
+a.btn-primary.disabled:hover, 
+a.btn-primary[disabled]:hover, 
+a.btn-primary.disabled:focus, 
+a.btn-primary[disabled]:focus, 
+a.btn-primary.disabled:active, 
+a.btn-primary[disabled]:active, 
+a.btn-primary.disabled.active, 
+a.btn-primary[disabled].active { 
+	background-color: Pink;
+    border-color: Pink;
+}
+.btn-xs,
+a.btn-xs,
+a.btn-xs:visited,
+a.btn-xs:active {
+    border-color: Pink;
+}
+.bg-dark .btn.btn-primary {
+  	background-color: Pink;
+}
+.widget-handle .cart .label {
+  background: Pink;
+}
+.bg-primary input[type="submit"],
+.bg-primary button[type="submit"],
+.bg-primary button[type="button"]{
+  background: #fff;
+  color: Pink;
+}
+input[type="submit"].hollow,
+button[type="submit"].hollow,
+button[type="button"].hollow{
+  background: none;
+  border: 2px solid Pink;
+  color: Pink;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+}
+input[type="submit"].hollow:hover,
+button[type="submit"].hollow:hover,
+button[type="button"].hollow:hover{
+  background: Pink;
+  color: #fff;
+}
+.checkbox-option.checked .inner {
+  transform: translate3d(25px, 0, 0);
+  -webkit-transform: translate3d(25px, 0, 0);
+  -moz-transform: translate3d(25px, 0, 0);
+  background: Pink;
+}
+.accordion-1 .active .title {
+  background: Pink;
+  color: #fff;
+}
+.accordion-1 .active .title:hover {
+  background: Pink;
+}
+.button-tabs .active .tab-title {
+  background: Pink;
+  color: #fff;
+}
+.button-tabs .active .tab-title:hover {
+  background: Pink;
+}
+.text-tabs .tab-title:after {
+  background: Pink;
+}
+.text-tabs .active .tab-title {
+  opacity: 1;
+  color: Pink;
+}
+.icon-tabs .active .tab-title {
+  color: Pink;
+  opacity: 1;
+}
+.icon-tabs .active .tab-title i {
+  color: Pink;
+}
+.progress-bar {
+  background: Pink;
+  box-shadow: none !important;
+}
+.progress-2 .bar-holder {
+  border: 1px solid Pink;
+}
+.feature-1 i {
+  color: Pink;
+}
+.feature-2 i {
+  border: 1px solid Pink;
+  color: Pink;
+}
+.feature-2 i:hover,
+.feature-2.filled i {
+  background: Pink;
+  color: #fff;
+}
+.feature-3 i {
+  color: Pink;
+}
+.feature-color:nth-of-type(1) {
+  background: Pink;
+}
+.pricing-table.emphasis {
+  background: Pink;
+  color: #fff;
+}
+.cart-overview a:hover {
+  color: Pink;
+}
+.product-single .price:not(.old-price) {
+  color: Pink;
+}
+.masonry-item blockquote:hover {
+  background: Pink;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  color: #fff;
+}
+.spinner {
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 2px 1px 0px Pink;
+}
+.filters li {
+  border: 2px solid Pink;
+  color: Pink;
+}
+.filters li.active {
+  border-color: Pink;
+  opacity: 1;
+}
+.sc-background-orange {
+  background: Pink !important;
+}
+.primary-color {
+	color: Pink;
+}
+.primary-background-color {
+	background-color: Pink;
+    color: #fff;
+}
+.software_form_item_view .back_button {
+	background-color: #fff !important;
+    color: Pink !important;
+}
+.software_form_item_view .back_button:focus,
+.software_form_item_view .back_button:hover {
+	background-color:  Pink !important;
+    color: #fff  !important;
+}
+.feature.bordered.text-center .btn {
+	width: 100%;
+    border-color: Pink;
+    background: Pink;
+    color: #fff;
+}
+.link-list > li.active > a, .link-list > li.active > a:hover, .link-list > li.active > a:focus {
+    background-color: Pink;
+    color: #fff;
+}
+.upcoming-concerts-widget {
+	background-color: Pink;
+    color: #fff;
+}
+
+/* shade lighter of primary */
+.btn:hover,
+.btn:focus,
+a.btn:hover,
+a.btn:focus {
+  background-color: #ffe6ea;
+  border-color: #ffe6ea;
+  color: #fff;
+}
+.bg-dark .btn-primary:hover,
+.bg-dark .btn-primary:focus,
+.btn-primary:hover,
+.btn-primary:focus,
+a.btn-primary:hover,
+a.btn-primary:focus,
+.btn-filled:hover,
+.btn-filled:focus,
+a.btn-filled:hover,
+a.btn-filled:focus {
+  background-color: #ffe6ea;
+  border-color: #ffe6ea;
+  color: #fff;
+}
+.feature.bordered.text-center .btn:hover,
+.feature.bordered.text-center .btn:focus {
+  	background: #ffe6ea;
+  	border-color: #ffe6ea;
+  	color: #fff;
+}
+.bg-primary .list-inline i {
+  color: #ffe6ea;
+}
+.bg-primary .progress-2 .bar-holder {
+  border-color: #ffe6ea;
+}
+
+
+/* shade darker of primary */
+.feature-color:nth-of-type(2) {
+  background: #ff99aa;
+}
+.feature-color:nth-of-type(3) {
+  background: #ff99aa;
+}
+.software_order_receipt ~ .fieldset {
+    border-radius: 0;
+    border: none;
+	background-color: #ffe6ea;
+	color: #ff99aa;
+}
+.software_order_receipt ~ .fieldset .legend {
+	color: #ff99aa;
+	border: none;
+}
+.account.heading {
+    background: #ffe6ea;
+    color: #ff99aa;
+}
+.account.data {
+    background: #ffe6ea;
+    color: #ff99aa;
+}
