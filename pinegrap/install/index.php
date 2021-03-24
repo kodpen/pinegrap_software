@@ -4710,7 +4710,7 @@ function upgrade_to_2021_1_3()
 
     db("INSERT INTO dashboard (main_weather_location)VALUES ('london')");
 
-    db("ALTER TABLE dashboard ADD bg_image VARCHAR(256) NOT NULL DEFAULT 'image1'");
+    db("ALTER TABLE dashboard ADD bg_image VARCHAR(256) NOT NULL DEFAULT 'bg_purple_and_blue'");
 
     db("ALTER TABLE dashboard ADD widget_themes ENUM('blur_one', 'blur_two','blur_three') NOT NULL DEFAULT 'blur_one'");
 
