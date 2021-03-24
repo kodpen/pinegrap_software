@@ -1,0 +1,40 @@
+/**
+ *
+ * liveSite - Enterprise Website Platform
+ *
+ * @author      Camelback Web Architects
+ * @link        https://livesite.com
+ * @copyright   2001-2019 Camelback Consulting, Inc.
+ * @license     https://opensource.org/licenses/mit-license.html MIT License
+ *
+ */
+
+body
+{
+    font-size: 60%;
+}
+
+#header,
+#subnav,
+#button_bar,
+#help_link,
+h1,
+.subheading,
+.print_packing_slip,
+.buttons,
+#footer {
+    display: none;
+}
+
+#content
+{
+    border: none;
+    font-size: 100%;
+    padding: 0;
+}
+
+textarea,input,select{
+    border:none !important;
+    -webkit-box-shadow:none !important;
+    box-shadow:none !important;
+}
