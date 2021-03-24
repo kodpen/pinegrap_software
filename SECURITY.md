@@ -2,8 +2,7 @@
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+The versions marked below can receive security updates.
 
 | Version | Supported          |
 | ------- | ------------------ |
@@ -12,9 +11,7 @@ currently being supported with security updates.
 | 19.x    | :x:                |
 
 ## Reporting a Vulnerability
-
-Use this section to tell people how to report a vulnerability.
-
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+if you find a vulnerability, you can report it to info@kodpen.com and we will fix it as soon as possible.
+There is no existing security vulnerability.
+Attention! Part of the security is provided by .htaccess files. Make sure that .htaccess files are executable on your server. 
+Pinegrap needs a Mysql database (5.x or MariaDB v10.x) and a server that can run PHP (5.3+). Make sure that allow_url_fopen is enabled in the php settings.
