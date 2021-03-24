@@ -1,7 +1,7 @@
-Pinegrap Content Management System
+##### Pinegrap Content Management System
 
-Languages:  **English, Turkish**
+Languages: **English, Turkish**
 
-Version:        **21.2.1**
+Version: **21.2.1**
 
 Website: [www.kodpen.com](https://www.kodpen.com/pinegrap-cms)
