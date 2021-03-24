@@ -1,0 +1,3 @@
+This is an example file that is "protected" from viewing or downloading because it is in a Private Folder.
+
+When the software product is ordered, the user that placed the order is given access to the Private Folder this file is in (so they can download it).

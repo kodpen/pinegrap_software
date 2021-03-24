@@ -1,0 +1,292 @@
+/*Primary colors */
+a {
+  color: Salmon;
+}
+.label {
+  background: Salmon;
+}
+.bg-secondary blockquote {
+  border-color: Salmon;
+}
+.bg-primary {
+  background: Salmon !important;
+}
+.color-primary {
+  color: Salmon !important;
+}
+.background-multiply .background-image-holder {
+  background-color: Salmon !important;
+  background-blend-mode: multiply;
+}
+.btn,
+a.btn:visited {
+  color: Salmon;
+  border: 2px solid;
+  border-color: Salmon;
+  background-color: #fff;
+}
+.bg-dark .btn-primary,
+.btn-primary,
+.btn-primary:visited,
+.btn-primary:active,
+a.btn-primary:visited,
+a.btn-primary:active {
+    background-color: Salmon;
+    border-color: Salmon;
+    color: #fff;
+}
+.btn-filled,
+a.btn-filled:visited,
+a.btn-filled:active {
+  border-color: Salmon;
+  background-color: Salmon;
+  color: #fff;
+}
+.btn-primary.disabled, 
+.btn-primary[disabled], 
+fieldset[disabled] .btn-primary, 
+.btn-primary.disabled:hover, 
+.btn-primary[disabled]:hover, 
+fieldset[disabled] .btn-primary:hover, 
+.btn-primary.disabled:focus, 
+.btn-primary[disabled]:focus, 
+fieldset[disabled] .btn-primary:focus, 
+.btn-primary.disabled:active, 
+.btn-primary[disabled]:active, 
+fieldset[disabled] .btn-primary:active, 
+.btn-primary.disabled.active, 
+.btn-primary[disabled].active, 
+fieldset[disabled] .btn-primary.active { 
+	background-color: Salmon;
+    border-color: Salmon;
+}
+a.btn-primary.disabled, 
+a.btn-primary[disabled], 
+a.btn-primary.disabled:hover, 
+a.btn-primary[disabled]:hover, 
+a.btn-primary.disabled:focus, 
+a.btn-primary[disabled]:focus, 
+a.btn-primary.disabled:active, 
+a.btn-primary[disabled]:active, 
+a.btn-primary.disabled.active, 
+a.btn-primary[disabled].active { 
+	background-color: Salmon;
+    border-color: Salmon;
+}
+.btn-xs,
+a.btn-xs,
+a.btn-xs:visited,
+a.btn-xs:active {
+    border-color: Salmon;
+}
+.bg-dark .btn.btn-primary {
+  	background-color: Salmon;
+}
+.widget-handle .cart .label {
+  background: Salmon;
+}
+.bg-primary input[type="submit"],
+.bg-primary button[type="submit"],
+.bg-primary button[type="button"]{
+  background: #fff;
+  color: Salmon;
+}
+input[type="submit"].hollow,
+button[type="submit"].hollow,
+button[type="button"].hollow{
+  background: none;
+  border: 2px solid Salmon;
+  color: Salmon;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+}
+input[type="submit"].hollow:hover,
+button[type="submit"].hollow:hover,
+button[type="button"].hollow:hover{
+  background: Salmon;
+  color: #fff;
+}
+.checkbox-option.checked .inner {
+  transform: translate3d(25px, 0, 0);
+  -webkit-transform: translate3d(25px, 0, 0);
+  -moz-transform: translate3d(25px, 0, 0);
+  background: Salmon;
+}
+.accordion-1 .active .title {
+  background: Salmon;
+  color: #fff;
+}
+.accordion-1 .active .title:hover {
+  background: Salmon;
+}
+.button-tabs .active .tab-title {
+  background: Salmon;
+  color: #fff;
+}
+.button-tabs .active .tab-title:hover {
+  background: Salmon;
+}
+.text-tabs .tab-title:after {
+  background: Salmon;
+}
+.text-tabs .active .tab-title {
+  opacity: 1;
+  color: Salmon;
+}
+.icon-tabs .active .tab-title {
+  color: Salmon;
+  opacity: 1;
+}
+.icon-tabs .active .tab-title i {
+  color: Salmon;
+}
+.progress-bar {
+  background: Salmon;
+  box-shadow: none !important;
+}
+.progress-2 .bar-holder {
+  border: 1px solid Salmon;
+}
+.feature-1 i {
+  color: Salmon;
+}
+.feature-2 i {
+  border: 1px solid Salmon;
+  color: Salmon;
+}
+.feature-2 i:hover,
+.feature-2.filled i {
+  background: Salmon;
+  color: #fff;
+}
+.feature-3 i {
+  color: Salmon;
+}
+.feature-color:nth-of-type(1) {
+  background: Salmon;
+}
+.pricing-table.emphasis {
+  background: Salmon;
+  color: #fff;
+}
+.cart-overview a:hover {
+  color: Salmon;
+}
+.product-single .price:not(.old-price) {
+  color: Salmon;
+}
+.masonry-item blockquote:hover {
+  background: Salmon;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  color: #fff;
+}
+.spinner {
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 2px 1px 0px Salmon;
+}
+.filters li {
+  border: 2px solid Salmon;
+  color: Salmon;
+}
+.filters li.active {
+  border-color: Salmon;
+  opacity: 1;
+}
+.sc-background-orange {
+  background: Salmon !important;
+}
+.primary-color {
+	color: Salmon;
+}
+.primary-background-color {
+	background-color: Salmon;
+    color: #fff;
+}
+.software_form_item_view .back_button {
+	background-color: #fff !important;
+    color: Salmon !important;
+}
+.software_form_item_view .back_button:focus,
+.software_form_item_view .back_button:hover {
+	background-color:  Salmon !important;
+    color: #fff  !important;
+}
+.feature.bordered.text-center .btn {
+	width: 100%;
+    border-color: Salmon;
+    background: Salmon;
+    color: #fff;
+}
+.link-list > li.active > a, .link-list > li.active > a:hover, .link-list > li.active > a:focus {
+    background-color: Salmon;
+    color: #fff;
+}
+.upcoming-concerts-widget {
+	background-color: Salmon;
+    color: #fff;
+}
+
+/* shade lighter of primary */
+.btn:hover,
+.btn:focus,
+a.btn:hover,
+a.btn:focus {
+  background-color: #fba69d;
+  border-color: #fba69d;
+  color: #fff;
+}
+.bg-dark .btn-primary:hover,
+.bg-dark .btn-primary:focus,
+.btn-primary:hover,
+.btn-primary:focus,
+a.btn-primary:hover,
+a.btn-primary:focus,
+.btn-filled:hover,
+.btn-filled:focus,
+a.btn-filled:hover,
+a.btn-filled:focus {
+  background-color: #fba69d;
+  border-color: #fba69d;
+  color: #fff;
+}
+.feature.bordered.text-center .btn:hover,
+.feature.bordered.text-center .btn:focus {
+  	background: #fba69d;
+  	border-color: #fba69d;
+  	color: #fff;
+}
+.bg-primary .list-inline i {
+  color: #fba69d;
+}
+.bg-primary .progress-2 .bar-holder {
+  border-color: #fba69d;
+}
+
+
+/* shade darker of primary */
+.feature-color:nth-of-type(2) {
+  background: #f96353;
+}
+.feature-color:nth-of-type(3) {
+  background: #f96353;
+}
+.software_order_receipt ~ .fieldset {
+    border-radius: 0;
+    border: none;
+	background-color: #fba69d;
+	color: #f96353;
+}
+.software_order_receipt ~ .fieldset .legend {
+	color: #f96353;
+	border: none;
+}
+.account.heading {
+    background: #fba69d;
+    color: #f96353;
+}
+.account.data {
+    background: #fba69d;
+    color: #f96353;
+}
