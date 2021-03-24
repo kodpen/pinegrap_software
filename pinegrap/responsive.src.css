@@ -1,0 +1,620 @@
+/**
+ *
+ * liveSite - Enterprise Website Platform
+ *
+ * @author      Camelback Web Architects
+ * @link        https://livesite.com
+ * @copyright   2001-2019 Camelback Consulting, Inc.
+ * @license     https://opensource.org/licenses/mit-license.html MIT License
+ *
+ */
+ 
+/*************************************************************************************************************************************
+responsive.src.css
+
+This file defines all the changes necessary for all system regions (page types) to transform based on screen size.
+
+Include the minified version in all your responsive themes like this:
+
+@import url({path}{software_directory}/responsive.min.css);
+
+Then, be sure to include the responsive custom formats if you want them exposed in your rich text editor
+
+<comment> <add_custom_formats> </comment>
+a.link-mobile-fill{}
+a.link-desktop-hide{}
+a.link-mobile-hide{}
+img.image-mobile-fill{}
+img.image-desktop-hide{}
+img.image-mobile-hide{}
+p.paragraph-desktop-hide{}
+p.paragraph-mobile-hide{}
+span.text-desktop-hide{}
+span.text-mobile-hide{}
+table.table-desktop-hide{}
+table.table-mobile-hide{}
+td.table-cell-mobile-hide{}
+td.table-cell-desktop-hide{}
+td.table-cell-mobile-fill{}
+td.table-cell-mobile-wrap{}
+td.table-cell-width10{}
+td.table-cell-width15{}
+td.table-cell-width20{}
+td.table-cell-width25{}
+td.table-cell-width33{}
+td.table-cell-width40{}
+td.table-cell-width50{}
+td.table-cell-width75{}
+td.table-cell-width80{}
+td.table-cell-width90{}
+.video-mobile-fill{}
+.video-desktop-hide{}
+.video-mobile-hide{}
+<comment> </add_custom_formats> </comment>
+
+If you need to make changes, create a copy of responsive.src.css and include that file instead.
+*************************************************************************************************************************************/
+
+
+/* define box-sizing for common objects that might need to squeeze into contracting containers */
+
+img,object,embed,iframe,video {
+	-webkit-box-sizing: border-box;
+   	-moz-box-sizing: border-box;
+   	box-sizing: border-box;
+}
+
+/* makes changes to layout for smaller tablets (less than 768)*/
+@media only screen and (max-width:767px) {
+
+	.software_input_text,
+	.software_textarea,
+	.software_input_password
+	{
+	    /* width: 98%; */
+	    width: 100%;
+		-webkit-box-sizing: border-box;
+   		-moz-box-sizing: border-box;
+   		box-sizing: border-box;
+	}
+	.mobile_width
+	{
+	    width: 100% !important;
+	    white-space: normal !important;
+		-webkit-box-sizing: border-box;
+   		-moz-box-sizing: border-box;
+   		box-sizing: border-box;
+	}
+	.mobile_fixed_width
+	{
+	    width: auto !important;
+	}
+	.mobile_left
+	{
+	    float: left !important;
+	}
+	.mobile_right
+	{
+	    float: right !important;
+	}
+	.mobile_hide
+	{
+	    display: none;
+	}
+	.mobile_text_width
+	{
+	    width: auto !important;
+	}
+	.mobile_align_left
+	{
+	    text-align: left !important;
+	    white-space: normal !important;
+	    margin-bottom: .5em !important;
+	}
+	.mobile_align_left input
+	{
+	    margin-bottom: .5em !important;
+	}
+	.mobile_margin_top
+	{
+	    margin-top: 1em !important;
+	}
+	.mobile_margin_bottom
+	{
+	    margin-bottom: 1em !important;
+	}
+	.complete_orders .data,
+	.incomplete_orders .data
+	{
+	    padding-left: 0 !important;
+	}
+	#credit_debit_card_fields
+	{
+	    padding-left: 0 !important;
+	}
+	.software_input_radio,
+	.software_input_checkbox
+	{
+		font-size: 150%;
+	}
+	.software_captcha_answer
+	{
+		width: 2em;
+	}
+	card_verification_number input
+	{
+		width: 5em;
+	}
+	div.item.mobile_left,
+	td.mobile_spacer
+	{
+		margin-right: 1em;
+	}
+
+	/* calendar page type */
+	.software_calendar .monthly {
+		display: none;
+	}
+	.software_calendar .weekly {
+		display: block !important;
+	}
+	.calendar_view td {
+		padding-right: 0 !important;
+	}
+
+	/* form list view page type */
+	.software_form_list_view .browse_filter_container td {
+	    width: auto !important;
+	}
+
+	/* photo gallery page type */
+	.software_photo_gallery_album table,
+	.software_photo_gallery_album table td {
+		text-align: left;
+		width: 100%;
+	}
+
+	.software_photo_gallery_album table td.album,
+	.software_photo_gallery_album table td.photo {
+		padding: 0;
+		margin-bottom: 1em;
+	}
+	.software_photo_gallery_album table td #album_frame_1,
+	.software_photo_gallery_album table td #album_frame_2 {
+		display: none;
+	}
+	.software_photo_gallery_album .album .image,
+	.software_photo_gallery_album .photo .image {
+		/*padding: 0;*/
+		-webkit-box-sizing: border-box;
+   		-moz-box-sizing: border-box;
+   		box-sizing: border-box;
+	}
+
+	/* adjust all page types with embedded forms */
+	.software_custom_form td,
+    .software_billing_information td,
+	.software_shipping_address_and_arrival td,
+	.software_express_order .ship_tos.data td,
+	.software_express_order .billing.data td,
+	.software_express_order .payment.data td,
+	.software_affiliate_sign_up_form td,
+	.software_registration_entrance td,
+	.software_membership_entrance td,
+	.software_login td,
+	.software_order_preview .payment.data td,
+	.quick_add td,
+	.software_form_item_view td,
+	.software_custom_form_confirmation td,
+	.software_update_address_book td,
+	.software_my_account_profile td,
+	.software_forgot_password td,
+	.software_set_password td,
+	.software_email_a_friend td,
+	.software_change_password td {
+        float: left;
+        width: 100%;
+    }
+    .software_custom_form td ~ td,
+    .software_billing_information td ~ td,
+	.software_shipping_address_and_arrival td ~ td,
+	.software_express_order .ship_tos.data td ~ td,
+	.software_express_order .billing.data td ~ td,
+	.software_express_order .payment.data td ~ td,
+	.software_affiliate_sign_up_form td ~ td,
+	.software_registration_entrance td ~ td,
+	.software_membership_entrance td ~ td,
+	.software_login td ~ td,
+	.software_order_preview .payment.data td ~ td,
+	.quick_add td ~ td,
+	.software_form_item_view td ~ td,
+	.software_custom_form_confirmation td ~ td,
+	.software_update_address_book td ~ td,
+	.software_my_account_profile td ~ td,
+	.software_forgot_password td ~ td,
+	.software_set_password td ~ td,
+	.software_email_a_friend td ~ td,
+	.software_change_password td ~ td {
+        float: right;
+    }
+    
+    .software_shipping_address_and_arrival .arrival_dates td,
+    .software_express_order .ship_tos.data .arrival_dates td,
+    .software_express_order .ship_tos.data .shipping_methods td {
+    	float: none;
+        width: inherit;
+    }
+    form td ~ td {
+		padding-left: 0;
+	}
+    .software_my_account_profile table {
+    	width: 100%;
+    }
+    .software_my_account_profile table td {
+    	width: 100% !important;
+    }
+    /* new responsive desktop mode overrides */
+    .desktop_left
+	{
+	    float: left !important;
+        width: 100% !important;
+        padding: 0 0 1em;
+	}
+	.desktop_right
+	{
+	    float: right !important;
+        width: 100% !important;
+        padding: 0 0 1em;
+	}
+
+	/* reflow catalog page for small tablets and mobile */
+	div.top_item {width: 100%; margin-right: 0 !important;}
+    .featured_and_new_item_table div.item {float: left;}
+    .featured_and_new_item_table td.mobile_spacer {display: none;}
+    .software_catalog .item_table tr {display: inline;}
+    .software_catalog .item_table td.mobile_spacer {display: none;}
+    .software_catalog .item_table td.mobile_left {min-height: 250px; margin-right: 1em;} /* increase min-height if thumbnails are too narrow for product info below */
+
+    .mobile_no_clear {clear: inherit !important;}
+
+}
+
+/* pocket devices */
+@media only screen and (max-width:480px) {
+    
+	.software_catalog_detail td {
+        width: 100% !important;
+	}
+
+	.software_shipping_method table.shipping_info td {
+		float: left;
+		width: 100%;
+		padding-bottom: 1em;
+	}
+
+	.software_photo_gallery_album table td img,
+    .software_catalog .full_description img,
+	.software_catalog_detail .full_description img {
+		width: 100% !important;
+		max-width: 100% !important;
+		height: auto !important;
+		-webkit-box-sizing: border-box;
+   		-moz-box-sizing: border-box;
+   		box-sizing: border-box;
+        margin-bottom: 1em;
+	}
+
+	.mobile_text_width {
+	    width: 100% !important;
+	    margin-bottom: .5em;
+		-webkit-box-sizing: border-box;
+   		-moz-box-sizing: border-box;
+   		box-sizing: border-box;
+	}
+}
+
+/***********************************************************************************************************************************/
+/*  Style the Custom Formats for responsive desktop/mobile hides and responsive tables for the Rich-Text Editor defined in Theme.  */
+/***********************************************************************************************************************************/
+
+.table-cell-width10,
+.table-cell-width15,
+.table-cell-width20,
+.table-cell-width25,
+.table-cell-width33,
+.table-cell-width40,
+.table-cell-width50,
+.table-cell-width75,
+.table-cell-width80,
+.table-cell-width90 {
+	display: table-cell;
+    vertical-align: top;
+    padding-right: 5%;
+    width: auto;
+}
+.table-cell-width10:last-child,
+.table-cell-width15:last-child,
+.table-cell-width20:last-child,
+.table-cell-width25:last-child,
+.table-cell-width33:last-child,
+.table-cell-width40:last-child,
+.table-cell-width50:last-child,
+.table-cell-width75:last-child,
+.table-cell-width80:last-child,
+.table-cell-width90:last-child {
+    padding: 0;
+}
+.table-cell-width10 {
+	width: 10%;
+}
+.table-cell-width15 {
+	width: 15%;
+}
+.table-cell-width20 {
+	width: 20%;
+}
+.table-cell-width25 {
+	width: 25%;
+}
+.table-cell-width33 {
+	width: 33%;
+}
+.table-cell-width40 {
+	width: 40%;
+}
+.table-cell-width50 {
+	width: 50%;
+}
+.table-cell-width75 {
+	width: 75%;
+}
+.table-cell-width80 {
+	width: 80%;
+}
+.table-cell-width90 {
+	width: 90%;
+}
+/* show mobile hides to desktop */
+.table-mobile-hide,
+.table-cell-mobile-hide,
+.paragraph-mobile-hide,
+.image-mobile-hide,
+.video-mobile-hide,
+.video-mobile-hide object,
+.video-mobile-hide iframe,
+.video-mobile-hide video,
+.link-mobile-hide,
+.mobile-hide,
+.text-mobile-hide {
+ 	display: block;
+}
+/* and then don't show desktop hides */
+.table-desktop-hide,
+.table-cell-desktop-hide,
+.paragraph-desktop-hide,
+.image-desktop-hide,
+.video-desktop-hide,
+.video-desktop-hide object,
+.video-desktop-hide iframe,
+.video-desktop-hide video,
+.link-desktop-hide,
+.desktop-hide,
+.text-desktop-hide {
+ 	display: none;
+}
+/* but disable all hides when editing in admin panel */
+.edit_mode .table-desktop-hide,
+.edit_mode .table-cell-desktop-hide,
+.edit_mode .paragraph-desktop-hide,
+.edit_mode .image-desktop-hide,
+.edit_mode .video-desktop-hide,
+.edit_mode .video-desktop-hide object,
+.edit_mode .video-desktop-hide iframe,
+.edit_mode .video-desktop-hide video,
+.edit_mode .link-desktop-hide,
+.edit_mode .desktop-hide,
+.edit_mode .text-desktop-hide,
+.edit_mode .table-mobile-hide,
+.edit_mode .table-cell-mobile-hide,
+.edit_mode .paragraph-mobile-hide,
+.edit_mode .image-mobile-hide,
+.edit_mode .video-mobile-hide,
+.edit_mode .video-mobile-hide object,
+.edit_mode .video-mobile-hide iframe,
+.edit_mode .video-mobile-hide video,
+.edit_mode .link-mobile-hide,
+.edit_mode .mobile-hide,
+.edit_mode .text-mobile-hide {
+ 	display: block !important;
+}
+/* and make table hides look nice when editing */
+.edit_mode .table-desktop-hide,
+.edit_mode .table-cell-desktop-hide,
+.edit_mode .table-mobile-hide,
+.edit_mode .table-cell-mobile-hide {
+ 	display: table !important;
+}
+/* show borders around responsive table cells when editing */
+.edit_mode .table-cell-width10,
+.edit_mode .table-cell-width15,
+.edit_mode .table-cell-width20,
+.edit_mode .table-cell-width25,
+.edit_mode .table-cell-width33,
+.edit_mode .table-cell-width40,
+.edit_mode .table-cell-width50,
+.edit_mode .table-cell-width75,
+.edit_mode .table-cell-width80,
+.edit_mode .table-cell-width90,
+.edit_mode .image-mobile-fill,
+.edit_mode .link-mobile-fill,
+.edit_mode .video-mobile-fill iframe,
+.edit_mode .video-mobile-fill object,
+.edit_mode .video-mobile-fill video,
+.edit_mode .table-cell-mobile-fill,
+.edit_mode .table-cell-mobile-wrap {
+	border: 2px dashed #588c33 !important;
+	-webkit-box-sizing: border-box;
+   	-moz-box-sizing: border-box;
+   	box-sizing: border-box;
+}
+
+/* tablet changes */
+@media only screen and (max-width:979px) {
+	/* tablet responsive table cells */
+	.table-cell-width10,
+   	.table-cell-width15,
+	.table-cell-width20,
+	.table-cell-width25,
+	.table-cell-width33,
+	.table-cell-width40,
+	.table-cell-width50,
+	.table-cell-width75,
+	.table-cell-width80,
+	.table-cell-width90 {
+		float: left;
+		width: inherit;
+		padding-bottom: 1em;
+	}
+}
+
+/* mobile (pocket-size) changes */
+@media only screen and (max-width:480px) {
+
+	/* mobile responsive table cells */
+	.table-cell-width10,
+   	.table-cell-width15,
+	.table-cell-width20,
+	.table-cell-width25,
+	.table-cell-width33,
+   	.table-cell-width40,
+	.table-cell-width50,
+	.table-cell-width75,
+	.table-cell-width80,
+	.table-cell-width90 {
+		float: left;
+		width: 100% !important;
+		padding: 1em 0 !important;
+		-webkit-box-sizing: border-box;
+   		-moz-box-sizing: border-box;
+   		box-sizing: border-box;
+	}
+    /* adjust text to the left if set to right */
+   	.table-cell-width10 p,
+    .table-cell-width15 p,
+	.table-cell-width20 p,
+	.table-cell-width25 p,
+	.table-cell-width33 p,
+    .table-cell-width40 p,
+	.table-cell-width50 p,
+	.table-cell-width75 p,
+	.table-cell-width80 p,
+	.table-cell-width90 p {
+		text-align: left !important;
+    }
+    
+	/* activate expanding links (buttons) */
+	.link-mobile-fill {
+		width: 100% !important;
+		padding: 1em 0 !important;
+		-webkit-box-sizing: border-box;
+   		-moz-box-sizing: border-box;
+   		box-sizing: border-box;
+	}
+	/* activate mobile cell expanding */
+	.table-cell-mobile-fill {
+		float: left;
+		width: 100% !important;
+		padding: 1em 0 !important;
+		-webkit-box-sizing: border-box;
+   		-moz-box-sizing: border-box;
+   		box-sizing: border-box;
+	}
+	/* activate mobile cell wrapping */
+	.table-cell-mobile-wrap {
+		float: left;
+		width: auto !important;
+	}
+	/* show all desktop hides to mobile */
+	.table-desktop-hide,
+	.table-cell-desktop-hide,
+	.paragraph-desktop-hide,
+	.image-desktop-hide,
+	.video-desktop-hide,
+	.video-desktop-hide object,
+	.video-desktop-hide iframe,
+	.video-desktop-hide video,
+	.link-desktop-hide,
+	.desktop-hide,
+	.text-desktop-hide {
+		display: block;
+	}
+	/* and then don't show mobile hides */
+	.table-mobile-hide,
+	.table-cell-mobile-hide,
+	.paragraph-mobile-hide,
+	.image-mobile-hide,
+	.video-mobile-hide,
+	.video-mobile-hide object,
+	.video-mobile-hide iframe,
+	.video-mobile-hide video,
+	.link-mobile-hide,
+	.mobile-hide,
+	.text-mobile-hide {
+		display: none;
+	}
+	/* activate images and videos for mobile  */
+	.image-right-primary,
+	.image-left-primary,
+	.image-right-secondary,
+	.image-left-secondary
+	{
+		float: left;
+		margin-right: 1em;
+		margin-left: 0;
+	}
+	.video-primary object,
+	.video-primary iframe,
+	.video-primary video,
+	.video-secondary object,
+	.video-secondary iframe,
+	.video-secondary video,
+	.video-right-primary object,
+	.video-right-primary iframe,
+	.video-right-primary video,
+	.video-left-primary object,
+	.video-left-primary iframe,
+	.video-left-primary video,
+	.video-right-secondary object,
+	.video-right-secondary iframe,
+	.video-right-secondary video,
+	.video-left-secondary object,
+	.video-left-secondary iframe,
+	.video-left-secondary video
+	{
+		float: left;
+		margin-right: 1em;
+		margin-left: 0;
+		/*border-width: 1px;
+		border-radius: 0;
+		-moz-border-radius: 0;
+		-webkit-border-radius: 0;*/
+		-webkit-box-sizing: border-box;
+   		-moz-box-sizing: border-box;
+   		box-sizing: border-box;
+	}
+	/* scale selected images and videos for mobile */
+	img.image-mobile-fill,
+	.video-mobile-fill object,
+	.video-mobile-fill embed,
+	.video-mobile-fill iframe,
+	.video-mobile-fill video
+	{
+		max-width: 100%;
+		width: 100% !important;
+		height: auto !important;
+		padding: 1em 0 !important;
+		-webkit-box-sizing: border-box;
+   		-moz-box-sizing: border-box;
+   		box-sizing: border-box;
+	}
+}

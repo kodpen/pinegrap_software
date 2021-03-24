@@ -1,0 +1,630 @@
+/**
+ *
+ * liveSite - Enterprise Website Platform
+ *
+ * @author      Camelback Web Architects
+ * @link        https://livesite.com
+ * @copyright   2001-2019 Camelback Consulting, Inc.
+ * @license     https://opensource.org/licenses/mit-license.html MIT License
+ *
+ */
+
+/* notices */
+
+.comment .notice,
+.software_discounted_price,
+.software_error, .software_error .description, .software_error li.error {
+    color: red;
+}
+
+.software_notice, .software_notice .description, .software_notice li.notice {
+    color: #428221;
+}
+
+/* dialogs */
+
+div.software.ui-dialog {
+    box-shadow: 0px 0px 20px #000;
+    background-color: inherit;
+    padding-bottom: 1em;
+}
+
+.software iframe.ui-dialog-content {
+    width: 100% !important;
+}
+
+.software .ui-draggable .ui-dialog-titlebar,
+.software.ui-draggable .ui-dialog-titlebar {
+    cursor: move;
+}
+
+.software .ui-draggable-disabled .ui-dialog-titlebar,
+.software.ui-draggable-disabled .ui-dialog-titlebar {
+    cursor: standard;
+}
+
+.software .ui-dialog .ui-dialog-title,
+.software.ui-dialog .ui-dialog-title {
+    color: inherit;
+    padding-left: .75em;
+    margin: 0;
+}
+
+    .software .ui-dialog .ui-dialog-title .title_bar_table,
+    .software.ui-dialog .ui-dialog-title .title_bar_table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+.software .ui-dialog .ui-dialog-titlebar-close,
+.software.ui-dialog .ui-dialog-titlebar-close {
+    position: absolute;
+    right: .5em;
+    top: -.15em;
+    cursor: standard;
+    padding: 0;
+    color: inherit;
+}
+
+.software a.ui-dialog-titlebar-close.ui-corner-all:before {
+    content: "x";
+}
+
+.software a.ui-dialog-titlebar-close.ui-corner-all {
+    text-decoration: none;
+}
+
+.software .ui-dialog .ui-dialog-titlebar-close span,
+.software.ui-dialog .ui-dialog-titlebar-close span {
+    display: none;
+}
+
+.software.ui-dialog .ui-dialog-content {
+    margin: 0;
+    padding: 0;
+}
+
+.software .ui-dialog .ui-resizable-n,
+.software.ui-dialog .ui-resizable-n {
+    cursor: n-resize;
+    height: 0px;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+.software .ui-dialog .ui-resizable-s,
+.software.ui-dialog .ui-resizable-s {
+    cursor: s-resize;
+    height: 5px;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+}
+
+.software .ui-dialog .ui-resizable-e,
+.software.ui-dialog .ui-resizable-e {
+    cursor: e-resize;
+    width: 5px;
+    right: 0px;
+    top: 22px;
+    height: 100%;
+}
+
+.software .ui-dialog .ui-resizable-w,
+.software.ui-dialog .ui-resizable-w {
+    cursor: w-resize;
+    width: 5px;
+    right: 0px;
+    top: 22px;
+    height: 100%;
+}
+
+.software .ui-dialog .ui-resizable-se,
+.software.ui-dialog .ui-resizable-se {
+    cursor: se-resize;
+    width: 5px;
+    height: 5px;
+    right: 0px;
+    bottom: 0px;
+}
+
+.software .ui-dialog .ui-resizable-sw,
+.software.ui-dialog .ui-resizable-sw {
+    cursor: sw-resize;
+    width: 5px;
+    height: 5px;
+    left: 0px;
+    bottom: 0px;
+}
+
+.software .ui-dialog .ui-resizable-nw,
+.software.ui-dialog .ui-resizable-nw {
+    cursor: nw-resize;
+    width: 5px;
+    height: 5px;
+    left: 0px;
+    top: 0px;
+}
+
+.software .ui-dialog .ui-resizable-ne,
+.software.ui-dialog .ui-resizable-ne {
+    cursor: ne-resize;
+    width: 0px;
+    height: 0px;
+    right: 0px;
+    top: 0px;
+}
+
+.ui-widget-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    filter: alpha(opacity=50);
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5;
+}
+
+.software.ui-resizable {
+    position: relative;
+}
+
+.software .ui-resizable-handle {
+    position: absolute;
+    display: none;
+    font-size: 0.1px;
+}
+
+.software.ui-resizable .ui-resizable-handle {
+    display: block;
+}
+
+body .software.ui-resizable-disabled .ui-resizable-handle {
+    display: none;
+}
+/* use body to make it more specific (css order) */
+body .software.ui-resizable-autohide .ui-resizable-handle {
+    display: none;
+}
+/* use body to make it more specific (css order) */
+.software .ui-resizable-n {
+    cursor: n-resize;
+    height: 6px;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+.software .ui-resizable-s {
+    cursor: s-resize;
+    height: 6px;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+}
+
+.software .ui-resizable-e {
+    cursor: e-resize;
+    width: 6px;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+}
+
+.software .ui-resizable-w {
+    cursor: w-resize;
+    width: 6px;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+}
+
+.software .ui-resizable-se {
+    cursor: se-resize;
+    width: 9px;
+    height: 9px;
+    right: 0px;
+    bottom: 0px;
+}
+
+.software .ui-resizable-sw {
+    cursor: sw-resize;
+    width: 9px;
+    height: 9px;
+    left: 0px;
+    bottom: 0px;
+}
+
+.software .ui-resizable-nw {
+    cursor: nw-resize;
+    width: 9px;
+    height: 9px;
+    left: 0px;
+    top: 0px;
+}
+
+.software .ui-resizable-ne {
+    cursor: ne-resize;
+    width: 9px;
+    height: 9px;
+    right: 0px;
+    top: 0px;
+}
+
+/* date picker */
+
+.ui-datepicker {
+    border: 1px solid #aaaaaa;
+    background: #ffffff;
+    color: #222222;
+    width: 17em;
+    padding: .2em .2em 0;
+    display: none;
+}
+
+.ui-datepicker-header {
+    border: 1px solid #aaaaaa;
+    background: #cccccc;
+    color: #222222;
+    font-weight: bold;
+}
+
+.ui-datepicker .ui-state-default {
+    border: 1px solid #d3d3d3;
+    background: #e6e6e6;
+    font-weight: normal;
+    color: #555555;
+}
+
+.ui-datepicker .ui-state-hover {
+    border: 1px solid #999999;
+    background: #dadada;
+    font-weight: normal;
+    color: #212121;
+}
+
+.ui-datepicker .ui-state-active {
+    border: 1px solid #aaaaaa;
+    background: #ffffff;
+    font-weight: normal;
+    color: #212121;
+}
+
+.ui-datepicker .ui-state-highlight {
+    border: 1px solid #fcefa1;
+    background: #fbf9ee;
+    color: #363636;
+}
+
+.ui-datepicker .ui-icon {
+    display: block;
+    text-indent: -99999px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+.ui-datepicker .ui-icon {
+    width: 16px;
+    height: 16px;
+    background-image: url(jquery/theme/images/ui-icons_222222_256x240.png);
+}
+
+.ui-datepicker .ui-icon-circle-triangle-w {
+    background-position: -80px -192px;
+}
+
+.ui-datepicker .ui-icon-circle-triangle-e {
+    background-position: -48px -192px;
+}
+
+.ui-datepicker-header {
+    position: relative;
+    padding: .2em 0;
+}
+
+.ui-datepicker-prev, .ui-datepicker-next {
+    position: absolute;
+    top: 2px;
+    width: 1.8em;
+    height: 1.8em;
+}
+
+.ui-datepicker-prev-hover, .ui-datepicker-next-hover {
+    top: 1px;
+}
+
+.ui-datepicker-prev {
+    left: 2px;
+}
+
+.ui-datepicker-next {
+    right: 2px;
+}
+
+.ui-datepicker-prev-hover {
+    left: 1px;
+}
+
+.ui-datepicker-next-hover {
+    right: 1px;
+}
+
+.ui-datepicker-prev span, .ui-datepicker-next span {
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -8px;
+    top: 50%;
+    margin-top: -8px;
+}
+
+a.ui-datepicker-prev, a.ui-datepicker-next {
+    transition: none !important
+}
+
+.ui-datepicker-title {
+    margin: 0 2.3em;
+    line-height: 1.8em;
+    text-align: center;
+}
+
+    .ui-datepicker-title select {
+        font-size: 1em;
+        margin: 1px 0;
+    }
+
+.ui-datepicker table {
+    width: 100%;
+    font-size: .9em;
+    border-collapse: collapse;
+    margin: 0 0 .4em;
+}
+
+.ui-datepicker th {
+    padding: .7em .3em;
+    text-align: center;
+    font-weight: bold;
+    border: 0;
+}
+
+.ui-datepicker td {
+    border: 0;
+    padding: 1px;
+}
+
+    .ui-datepicker td span, .ui-datepicker td a {
+        display: block;
+        padding: .2em;
+        text-align: right;
+        text-decoration: none;
+    }
+
+.ui-datepicker-buttonpane {
+    background-image: none;
+    margin: .7em 0 0 0;
+    padding: 0 .2em;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+}
+
+    .ui-datepicker-buttonpane button {
+        float: right;
+        margin: .5em .2em .4em;
+        cursor: pointer;
+        padding: .2em .6em .3em .6em;
+        width: auto;
+        overflow: visible;
+    }
+
+        .ui-datepicker-buttonpane button.ui-datepicker-current {
+            float: left;
+        }
+
+.ui-slider {
+    position: relative;
+    text-align: left;
+    border: 1px solid #aaaaaa;
+}
+
+.ui-slider-handle {
+    position: absolute;
+    z-index: 2;
+    width: 1.2em;
+    height: 1.2em;
+    cursor: default;
+}
+
+.ui-slider-range {
+    position: absolute;
+    z-index: 1;
+    font-size: .7em;
+    display: block;
+    border: 0;
+    background-position: 0 0;
+}
+
+.ui-slider-horizontal {
+    height: .8em;
+}
+
+    .ui-slider-horizontal .ui-slider-handle {
+        top: -.3em;
+        margin-left: -.6em;
+    }
+
+    .ui-slider-horizontal .ui-slider-range {
+        top: 0;
+        height: 100%;
+    }
+
+    .ui-slider-horizontal .ui-slider-range-min {
+        left: 0;
+    }
+
+    .ui-slider-horizontal .ui-slider-range-max {
+        right: 0;
+    }
+
+a.ui-slider-handle {
+    transition: none !important
+}
+
+.ui-timepicker-div .ui-widget-header {
+    margin-bottom: 8px;
+}
+
+.ui-timepicker-div dl {
+    text-align: left;
+}
+
+    .ui-timepicker-div dl dt {
+        height: 25px;
+        margin-bottom: -25px;
+    }
+
+    .ui-timepicker-div dl dd {
+        margin: 0 10px 10px 65px;
+    }
+
+.ui-timepicker-div td {
+    font-size: 90%;
+}
+
+.ui-tpicker-grid-label {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/*
+    This stacks table cells on top of each other at a small mobile width
+    for order form and etc.
+*/
+
+@media only screen and (max-width: 767px) {
+
+    /* We set table rows to display block so that margin can be applied. */
+    table.mobile_stacked tr {
+        display: block;
+        margin-bottom: 1em;
+    }
+
+    /*
+        We hide the th's in addition to the thead in case a thead is not included.
+        Hiding the th's allows us to prevent the table row margin above from
+        appearing on the hidden heading row.
+    */
+    table.mobile_stacked thead,
+    table.mobile_stacked th {
+        display: none;
+    }
+
+    table.mobile_stacked td {
+        display: block;
+        text-align: left;
+    }
+}
+
+
+
+/*
+    Fixes an issue where Firefox and some other browsers don't support max-width: 100%
+    (e.g. Bootstrap's .img-responsive) for images in a table.
+*/
+
+.responsive_table_image_1 {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.responsive_table_image_2 {
+    display: table-cell;
+}
+
+
+
+
+/* calendar */
+
+.software_monthly_calendar {
+    border-collapse: collapse;
+    border: 1px solid;
+    margin: 0 auto;
+    width: 99.9%;
+}
+
+.software_calendar form input,
+.software_calendar form .software_select,
+.software_calendar form .software_input_submit_small_secondary {
+    vertical-align: middle;
+}
+
+.software_monthly_calendar a {
+    border: none;
+    /*line-height: 1.2em;*/
+}
+
+    .software_monthly_calendar a span {
+        text-decoration: none;
+        display: inline-block;
+    }
+
+.software_monthly_calendar td,
+.software_monthly_calendar th {
+    /*line-height: 1em;*/
+    padding: 1em;
+    vertical-align: top;
+    border: 1px solid;
+}
+
+.software_monthly_calendar th {
+    border: 1px solid;
+    /*background: #000;
+color: #FFF;*/
+}
+
+.software_monthly_calendar td.inactive {
+    background-image: url(images/translucent_20.png);
+}
+
+.software_calendar .today {
+    font-weight: bold;
+}
+
+
+
+/* enforce a minimum edit grid size so inline editor can be accessed (needed for some custom themes that collapse grids and make them inaccessible by mouse) */
+div.edit_mode {
+    min-width: 1em;
+    min-height: 1em;
+}
+    /* ovveride frontend framework defaults so text links can be selected and styled with custom formats within the inline editor */
+    div.edit_mode a {
+        cursor: auto;
+        -webkit-user-select: auto;
+        -moz-user-select: auto;
+        -ms-user-select: auto;
+        user-select: auto;
+    }
+/* normalize input fields in pop up editor dialogs since some custom themes apply global styling to all imput fields that cke doesn't reset */
+input.cke_dialog_ui_input_text,
+select.cke_dialog_ui_input_select {
+    width: inherit !important;
+    height: inherit !important;
+    font-weight: inherit !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+}
