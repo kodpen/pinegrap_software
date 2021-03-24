@@ -1,0 +1,292 @@
+/*Primary colors */
+a {
+  color: CornflowerBlue;
+}
+.label {
+  background: CornflowerBlue;
+}
+.bg-secondary blockquote {
+  border-color: CornflowerBlue;
+}
+.bg-primary {
+  background: CornflowerBlue !important;
+}
+.color-primary {
+  color: CornflowerBlue !important;
+}
+.background-multiply .background-image-holder {
+  background-color: CornflowerBlue !important;
+  background-blend-mode: multiply;
+}
+.btn,
+a.btn:visited {
+  color: CornflowerBlue;
+  border: 2px solid;
+  border-color: CornflowerBlue;
+  background-color: #fff;
+}
+.bg-dark .btn-primary,
+.btn-primary,
+.btn-primary:visited,
+.btn-primary:active,
+a.btn-primary:visited,
+a.btn-primary:active {
+    background-color: CornflowerBlue;
+    border-color: CornflowerBlue;
+    color: #fff;
+}
+.btn-filled,
+a.btn-filled:visited,
+a.btn-filled:active {
+  border-color: CornflowerBlue;
+  background-color: CornflowerBlue;
+  color: #fff;
+}
+.btn-primary.disabled, 
+.btn-primary[disabled], 
+fieldset[disabled] .btn-primary, 
+.btn-primary.disabled:hover, 
+.btn-primary[disabled]:hover, 
+fieldset[disabled] .btn-primary:hover, 
+.btn-primary.disabled:focus, 
+.btn-primary[disabled]:focus, 
+fieldset[disabled] .btn-primary:focus, 
+.btn-primary.disabled:active, 
+.btn-primary[disabled]:active, 
+fieldset[disabled] .btn-primary:active, 
+.btn-primary.disabled.active, 
+.btn-primary[disabled].active, 
+fieldset[disabled] .btn-primary.active { 
+	background-color: CornflowerBlue;
+    border-color: CornflowerBlue;
+}
+a.btn-primary.disabled, 
+a.btn-primary[disabled], 
+a.btn-primary.disabled:hover, 
+a.btn-primary[disabled]:hover, 
+a.btn-primary.disabled:focus, 
+a.btn-primary[disabled]:focus, 
+a.btn-primary.disabled:active, 
+a.btn-primary[disabled]:active, 
+a.btn-primary.disabled.active, 
+a.btn-primary[disabled].active { 
+	background-color: CornflowerBlue;
+    border-color: CornflowerBlue;
+}
+.btn-xs,
+a.btn-xs,
+a.btn-xs:visited,
+a.btn-xs:active {
+    border-color: CornflowerBlue;
+}
+.bg-dark .btn.btn-primary {
+  	background-color: CornflowerBlue;
+}
+.widget-handle .cart .label {
+  background: CornflowerBlue;
+}
+.bg-primary input[type="submit"],
+.bg-primary button[type="submit"],
+.bg-primary button[type="button"]{
+  background: #fff;
+  color: CornflowerBlue;
+}
+input[type="submit"].hollow,
+button[type="submit"].hollow,
+button[type="button"].hollow{
+  background: none;
+  border: 2px solid CornflowerBlue;
+  color: CornflowerBlue;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+}
+input[type="submit"].hollow:hover,
+button[type="submit"].hollow:hover,
+button[type="button"].hollow:hover{
+  background: CornflowerBlue;
+  color: #fff;
+}
+.checkbox-option.checked .inner {
+  transform: translate3d(25px, 0, 0);
+  -webkit-transform: translate3d(25px, 0, 0);
+  -moz-transform: translate3d(25px, 0, 0);
+  background: CornflowerBlue;
+}
+.accordion-1 .active .title {
+  background: CornflowerBlue;
+  color: #fff;
+}
+.accordion-1 .active .title:hover {
+  background: CornflowerBlue;
+}
+.button-tabs .active .tab-title {
+  background: CornflowerBlue;
+  color: #fff;
+}
+.button-tabs .active .tab-title:hover {
+  background: CornflowerBlue;
+}
+.text-tabs .tab-title:after {
+  background: CornflowerBlue;
+}
+.text-tabs .active .tab-title {
+  opacity: 1;
+  color: CornflowerBlue;
+}
+.icon-tabs .active .tab-title {
+  color: CornflowerBlue;
+  opacity: 1;
+}
+.icon-tabs .active .tab-title i {
+  color: CornflowerBlue;
+}
+.progress-bar {
+  background: CornflowerBlue;
+  box-shadow: none !important;
+}
+.progress-2 .bar-holder {
+  border: 1px solid CornflowerBlue;
+}
+.feature-1 i {
+  color: CornflowerBlue;
+}
+.feature-2 i {
+  border: 1px solid CornflowerBlue;
+  color: CornflowerBlue;
+}
+.feature-2 i:hover,
+.feature-2.filled i {
+  background: CornflowerBlue;
+  color: #fff;
+}
+.feature-3 i {
+  color: CornflowerBlue;
+}
+.feature-color:nth-of-type(1) {
+  background: CornflowerBlue;
+}
+.pricing-table.emphasis {
+  background: CornflowerBlue;
+  color: #fff;
+}
+.cart-overview a:hover {
+  color: CornflowerBlue;
+}
+.product-single .price:not(.old-price) {
+  color: CornflowerBlue;
+}
+.masonry-item blockquote:hover {
+  background: CornflowerBlue;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  color: #fff;
+}
+.spinner {
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 2px 1px 0px CornflowerBlue;
+}
+.filters li {
+  border: 2px solid CornflowerBlue;
+  color: CornflowerBlue;
+}
+.filters li.active {
+  border-color: CornflowerBlue;
+  opacity: 1;
+}
+.sc-background-orange {
+  background: CornflowerBlue !important;
+}
+.primary-color {
+	color: CornflowerBlue;
+}
+.primary-background-color {
+	background-color: CornflowerBlue;
+    color: #fff;
+}
+.software_form_item_view .back_button {
+	background-color: #fff !important;
+    color: CornflowerBlue !important;
+}
+.software_form_item_view .back_button:focus,
+.software_form_item_view .back_button:hover {
+	background-color:  CornflowerBlue !important;
+    color: #fff  !important;
+}
+.feature.bordered.text-center .btn {
+	width: 100%;
+    border-color: CornflowerBlue;
+    background: CornflowerBlue;
+    color: #fff;
+}
+.link-list > li.active > a, .link-list > li.active > a:hover, .link-list > li.active > a:focus {
+    background-color: CornflowerBlue;
+    color: #fff;
+}
+.upcoming-concerts-widget {
+	background-color: CornflowerBlue;
+    color: #fff;
+}
+
+/* shade lighter of primary */
+.btn:hover,
+.btn:focus,
+a.btn:hover,
+a.btn:focus {
+  background-color: #8db0f2;
+  border-color: #8db0f2;
+  color: #fff;
+}
+.bg-dark .btn-primary:hover,
+.bg-dark .btn-primary:focus,
+.btn-primary:hover,
+.btn-primary:focus,
+a.btn-primary:hover,
+a.btn-primary:focus,
+.btn-filled:hover,
+.btn-filled:focus,
+a.btn-filled:hover,
+a.btn-filled:focus {
+  background-color: #8db0f2;
+  border-color: #8db0f2;
+  color: #fff;
+}
+.feature.bordered.text-center .btn:hover,
+.feature.bordered.text-center .btn:focus {
+  	background: #8db0f2;
+  	border-color: #8db0f2;
+  	color: #fff;
+}
+.bg-primary .list-inline i {
+  color: #8db0f2;
+}
+.bg-primary .progress-2 .bar-holder {
+  border-color: #8db0f2;
+}
+
+
+/* shade darker of primary */
+.feature-color:nth-of-type(2) {
+  background: #4881ea;
+}
+.feature-color:nth-of-type(3) {
+  background: #4881ea;
+}
+.software_order_receipt ~ .fieldset {
+    border-radius: 0;
+    border: none;
+	background-color: #8db0f2;
+	color: #4881ea;
+}
+.software_order_receipt ~ .fieldset .legend {
+	color: #4881ea;
+	border: none;
+}
+.account.heading {
+    background: #8db0f2;
+    color: #4881ea;
+}
+.account.data {
+    background: #8db0f2;
+    color: #4881ea;
+}

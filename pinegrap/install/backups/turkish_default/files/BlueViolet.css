@@ -1,0 +1,292 @@
+/*Primary colors */
+a {
+  color: BlueViolet;
+}
+.label {
+  background: BlueViolet;
+}
+.bg-secondary blockquote {
+  border-color: BlueViolet;
+}
+.bg-primary {
+  background: BlueViolet !important;
+}
+.color-primary {
+  color: BlueViolet !important;
+}
+.background-multiply .background-image-holder {
+  background-color: BlueViolet !important;
+  background-blend-mode: multiply;
+}
+.btn,
+a.btn:visited {
+  color: BlueViolet;
+  border: 2px solid;
+  border-color: BlueViolet;
+  background-color: #fff;
+}
+.bg-dark .btn-primary,
+.btn-primary,
+.btn-primary:visited,
+.btn-primary:active,
+a.btn-primary:visited,
+a.btn-primary:active {
+    background-color: BlueViolet;
+    border-color: BlueViolet;
+    color: #fff;
+}
+.btn-filled,
+a.btn-filled:visited,
+a.btn-filled:active {
+  border-color: BlueViolet;
+  background-color: BlueViolet;
+  color: #fff;
+}
+.btn-primary.disabled, 
+.btn-primary[disabled], 
+fieldset[disabled] .btn-primary, 
+.btn-primary.disabled:hover, 
+.btn-primary[disabled]:hover, 
+fieldset[disabled] .btn-primary:hover, 
+.btn-primary.disabled:focus, 
+.btn-primary[disabled]:focus, 
+fieldset[disabled] .btn-primary:focus, 
+.btn-primary.disabled:active, 
+.btn-primary[disabled]:active, 
+fieldset[disabled] .btn-primary:active, 
+.btn-primary.disabled.active, 
+.btn-primary[disabled].active, 
+fieldset[disabled] .btn-primary.active { 
+	background-color: BlueViolet;
+    border-color: BlueViolet;
+}
+a.btn-primary.disabled, 
+a.btn-primary[disabled], 
+a.btn-primary.disabled:hover, 
+a.btn-primary[disabled]:hover, 
+a.btn-primary.disabled:focus, 
+a.btn-primary[disabled]:focus, 
+a.btn-primary.disabled:active, 
+a.btn-primary[disabled]:active, 
+a.btn-primary.disabled.active, 
+a.btn-primary[disabled].active { 
+	background-color: BlueViolet;
+    border-color: BlueViolet;
+}
+.btn-xs,
+a.btn-xs,
+a.btn-xs:visited,
+a.btn-xs:active {
+    border-color: BlueViolet;
+}
+.bg-dark .btn.btn-primary {
+  	background-color: BlueViolet;
+}
+.widget-handle .cart .label {
+  background: BlueViolet;
+}
+.bg-primary input[type="submit"],
+.bg-primary button[type="submit"],
+.bg-primary button[type="button"]{
+  background: #fff;
+  color: BlueViolet;
+}
+input[type="submit"].hollow,
+button[type="submit"].hollow,
+button[type="button"].hollow{
+  background: none;
+  border: 2px solid BlueViolet;
+  color: BlueViolet;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+}
+input[type="submit"].hollow:hover,
+button[type="submit"].hollow:hover,
+button[type="button"].hollow:hover{
+  background: BlueViolet;
+  color: #fff;
+}
+.checkbox-option.checked .inner {
+  transform: translate3d(25px, 0, 0);
+  -webkit-transform: translate3d(25px, 0, 0);
+  -moz-transform: translate3d(25px, 0, 0);
+  background: BlueViolet;
+}
+.accordion-1 .active .title {
+  background: BlueViolet;
+  color: #fff;
+}
+.accordion-1 .active .title:hover {
+  background: BlueViolet;
+}
+.button-tabs .active .tab-title {
+  background: BlueViolet;
+  color: #fff;
+}
+.button-tabs .active .tab-title:hover {
+  background: BlueViolet;
+}
+.text-tabs .tab-title:after {
+  background: BlueViolet;
+}
+.text-tabs .active .tab-title {
+  opacity: 1;
+  color: BlueViolet;
+}
+.icon-tabs .active .tab-title {
+  color: BlueViolet;
+  opacity: 1;
+}
+.icon-tabs .active .tab-title i {
+  color: BlueViolet;
+}
+.progress-bar {
+  background: BlueViolet;
+  box-shadow: none !important;
+}
+.progress-2 .bar-holder {
+  border: 1px solid BlueViolet;
+}
+.feature-1 i {
+  color: BlueViolet;
+}
+.feature-2 i {
+  border: 1px solid BlueViolet;
+  color: BlueViolet;
+}
+.feature-2 i:hover,
+.feature-2.filled i {
+  background: BlueViolet;
+  color: #fff;
+}
+.feature-3 i {
+  color: BlueViolet;
+}
+.feature-color:nth-of-type(1) {
+  background: BlueViolet;
+}
+.pricing-table.emphasis {
+  background: BlueViolet;
+  color: #fff;
+}
+.cart-overview a:hover {
+  color: BlueViolet;
+}
+.product-single .price:not(.old-price) {
+  color: BlueViolet;
+}
+.masonry-item blockquote:hover {
+  background: BlueViolet;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  color: #fff;
+}
+.spinner {
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 2px 1px 0px BlueViolet;
+}
+.filters li {
+  border: 2px solid BlueViolet;
+  color: BlueViolet;
+}
+.filters li.active {
+  border-color: BlueViolet;
+  opacity: 1;
+}
+.sc-background-orange {
+  background: BlueViolet !important;
+}
+.primary-color {
+	color: BlueViolet;
+}
+.primary-background-color {
+	background-color: BlueViolet;
+    color: #fff;
+}
+.software_form_item_view .back_button {
+	background-color: #fff !important;
+    color: BlueViolet !important;
+}
+.software_form_item_view .back_button:focus,
+.software_form_item_view .back_button:hover {
+	background-color:  BlueViolet !important;
+    color: #fff  !important;
+}
+.feature.bordered.text-center .btn {
+	width: 100%;
+    border-color: BlueViolet;
+    background: BlueViolet;
+    color: #fff;
+}
+.link-list > li.active > a, .link-list > li.active > a:hover, .link-list > li.active > a:focus {
+    background-color: BlueViolet;
+    color: #fff;
+}
+.upcoming-concerts-widget {
+	background-color: BlueViolet;
+    color: #fff;
+}
+
+/* shade lighter of primary */
+.btn:hover,
+.btn:focus,
+a.btn:hover,
+a.btn:focus {
+  background-color: #0000cc;
+  border-color: #0000cc;
+  color: #fff;
+}
+.bg-dark .btn-primary:hover,
+.bg-dark .btn-primary:focus,
+.btn-primary:hover,
+.btn-primary:focus,
+a.btn-primary:hover,
+a.btn-primary:focus,
+.btn-filled:hover,
+.btn-filled:focus,
+a.btn-filled:hover,
+a.btn-filled:focus {
+  background-color: #0000cc;
+  border-color: #0000cc;
+  color: #fff;
+}
+.feature.bordered.text-center .btn:hover,
+.feature.bordered.text-center .btn:focus {
+  	background: #0000cc;
+  	border-color: #0000cc;
+  	color: #fff;
+}
+.bg-primary .list-inline i {
+  color: #0000cc;
+}
+.bg-primary .progress-2 .bar-holder {
+  border-color: #0000cc;
+}
+
+
+/* shade darker of primary */
+.feature-color:nth-of-type(2) {
+  background: #761cca;
+}
+.feature-color:nth-of-type(3) {
+  background: #761cca;
+}
+.software_order_receipt ~ .fieldset {
+    border-radius: 0;
+    border: none;
+	background-color: #0000cc;
+	color: #761cca;
+}
+.software_order_receipt ~ .fieldset .legend {
+	color: #761cca;
+	border: none;
+}
+.account.heading {
+    background: #0000cc;
+    color: #761cca;
+}
+.account.data {
+    background: #0000cc;
+    color: #761cca;
+}
